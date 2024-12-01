@@ -18,7 +18,7 @@ html {
 }
 
 .logo {
-    width: 25rem;
+    width: 23rem;
     margin-bottom: 3rem;
     /* Logo ile bağlantılar arasında boşluk */
 }
@@ -31,6 +31,7 @@ html {
     margin-right: 20rem;
     gap: 1rem;
     /* Bağlantılar arasındaki boşluk */
+    width: 12rem;
 }
 
 /* Bağlantıların stili */
@@ -39,7 +40,6 @@ html {
     color: white;
     font-size: 1rem;
     font-family: 'Barlow', sans-serif;
-
 }
 
 .links-container a:hover {
@@ -47,9 +47,50 @@ html {
     color: darkred;
 }
 
-.second-body {
-    display: flex;
-    justify-content: flex-start;
-    margin: 0 20rem;
+.titleOne {
+    max-width: 32rem;
+    font-size: 1.40rem;
+    margin: 2rem auto;
     padding: 0;
+    font-family: 'Barlow', sans-serif;
+    font-weight: 600;
+}
+
+.price-rating-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 32rem;
+    margin: 2rem auto;
+}
+
+.price {
+    color: #000;
+    font-size: 1.75rem;
+    font-family: 'Barlow', sans-serif;
+    font-weight: bold;
+}
+
+.rating {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    /* Yıldız ve sayılar arasında boşluk */
+    font-size: 1rem;
+    width: 7.56rem;
+}
+
+.rating-count {
+    font-size: 1rem;
+}
+
+
+.desc {
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    color: #5F5F5F;
+    max-width: 33.25rem;
+    margin: 2rem auto;
+    line-height: 1.8rem;
 }
