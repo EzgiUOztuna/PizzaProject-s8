@@ -6,6 +6,21 @@ export default function OrderForm() {
     const [pizzaBoyutu, setPizzaBoyutu] = useState(""); // Pizza boyutunu tutucak.
     const [hamurKalınlığı, setHamurKalınlığı] = useState(""); // Hamur seçimi yapılacak.
     const [error, setError] = useState(""); //Hata mesajını tutucak.
+    const [ekMalzemeler, setEkMalzemeler] = useState([]);
+    const [toplamFiyat, setToplamFiyat] = useState(85.50);
+    const ekMalzemelerListesi = ["Pepperoni",
+        "Tavuk Izgara",
+        "Mısır",
+        "Sarımsak",
+        "Ananas",
+        "Sosis",
+        "Soğan",
+        "Sucuk",
+        "Biber",
+        "Kabak",
+        "Kanada Jambonu",
+        "Domates",
+        "Jalepeno"];
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -19,12 +34,36 @@ export default function OrderForm() {
             return;
         }
 
+        //Seçimler geçerliyse hata sıfırlansın ve sipariş işlensin.
         setError("");
         console.log("Pizza Boyutu:", pizzaBoyutu);
         console.log("Hamur Kalınlığı:", hamurKalınlığı || "Seçim yapılmadı");
+        console.log("Ek Malzemeler:", ekMalzemeler);
 
         alert("Sipariş başarıyla oluşturuldu!");
     };
+
+    const handlePizzaBoyutChange = (e) => setPizzaBoyutu(e.target.value);
+    const handleHamurKalınlıgıChange = (e) => setHamurKalınlığı(e.target.value);
+
+    const handleMalzemeChange = (e) => {
+        const { value, checked } = e.target;
+        let updatedMalzemeler = [...ekMalzemeler];
+
+        if (checked) {
+            if (updatedMalzemeler.length < 10) {
+                updatedMalzemeler.push(value); // Malzeme ekle
+            } else {
+                alert("En fazla 10 malzeme seçebilirsiniz.");
+                return;
+            }
+        } else {
+            updatedMalzemeler = updatedMalzemeler.filter((item) => item !== value); // Malzeme kaldır
+        }
+        setEkMalzemeler(updatedMalzemeler);
+        setToplamFiyat(85.50 + updatedMalzemeler.length * 5);
+
+    }
 
 
     return (
@@ -53,56 +92,82 @@ export default function OrderForm() {
             </p>
 
             <form onSubmit={handleSubmit}>
-                <div className='boyut-secim'>
-                    <h2>Boyut Seç <span style={{ color: "red" }}>*</span></h2>
-                    <label>
-                        <input
-                            type="radio"
-                            value="Küçük"
-                            checked={pizzaBoyutu === "Küçük"}
-                            onChange={(e) => setPizzaBoyutu(e.target.value)}
-                        />
-                        Küçük
-                    </label>
-                    <label>
-                        <input
-                            type="radio"
-                            value="Orta"
-                            checked={pizzaBoyutu === "Orta"}
-                            onChange={(e) => setPizzaBoyutu(e.target.value)}
-                        />
-                        Orta
-                    </label>
-                    <label>
-                        <input
-                            type="radio"
-                            value="Büyük"
-                            checked={pizzaBoyutu === "Büyük"}
-                            onChange={(e) => setPizzaBoyutu(e.target.value)}
-                        />
-                        Büyük
-                    </label>
+                <div className='boyut-hamur' >
+                    <div className='boyut-secim'>
+                        <h2>Boyut Seç <span style={{ color: "red" }}>*</span></h2>
+                        <label>
+                            <input
+                                type="radio"
+                                value="Küçük"
+                                checked={pizzaBoyutu === "Küçük"}
+                                onChange={handlePizzaBoyutChange}
+                            />
+                            Küçük
+                        </label>
+                        <label>
+                            <input
+                                type="radio"
+                                value="Orta"
+                                checked={pizzaBoyutu === "Orta"}
+                                onChange={handlePizzaBoyutChange}
+                            />
+                            Orta
+                        </label>
+                        <label>
+                            <input
+                                type="radio"
+                                value="Büyük"
+                                checked={pizzaBoyutu === "Büyük"}
+                                onChange={handlePizzaBoyutChange}
+                            />
+                            Büyük
+                        </label>
+                    </div>
+
+                    <div className='hamur-secim'>
+                        <h2>Hamur Seç<span style={{ color: "red" }}>*</span></h2>
+                        <select
+                            value={hamurKalınlığı}
+                            onChange={handleHamurKalınlıgıChange}
+                        >
+                            <option value="">Hamur Kalınlığı</option>
+                            <option value="İnce">İnce</option>
+                            <option value="Orta">Orta</option>
+                            <option value="Kalın">Kalın</option>
+                        </select>
+                    </div>
                 </div>
 
-                <div className='hamur-secim'>
-                    <h2>Hamur Seç<span style={{ color: "red" }}>*</span></h2>
-                    <select
-                        value={hamurKalınlığı}
-                        onChange={(e) => setHamurKalınlığı(e.target.value)}
-                    >
-                        <option value="">Hamur Kalınlığı</option>
-                        <option value="İnce">İnce</option>
-                        <option value="Orta">Orta</option>
-                        <option value="Kalın">Kalın</option>
-                    </select>
+                <div className='ek-malzemeler'>
+                    <h2>Ek Malzemeler</h2>
+                    <p>En fazla 10 malzeme seçebilirsiniz. 5₺</p>
+                    {ekMalzemelerListesi.map((malzeme) => (
+                        <label key={malzeme}>
+                            <input
+                                type="checkbox"
+                                value={malzeme}
+                                checked={ekMalzemeler.includes(malzeme)}
+                                onChange={handleMalzemeChange}
+                            />
+                            {malzeme}
+                        </label>
+                    ))}
                 </div>
+
+
+
+
+
+
+
+
 
                 {error && <p style={{ color: "red" }}>{error}</p>}
 
                 {/* Form Gönderme 
                 <button type="submit">SİPARİŞ VER</button>*/}
 
-            </form>
+            </form >
 
         </>
     );
