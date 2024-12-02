@@ -8,6 +8,9 @@ export default function OrderForm() {
     const [error, setError] = useState(""); //Hata mesajını tutucak.
     const [ekMalzemeler, setEkMalzemeler] = useState([]);
     const [toplamFiyat, setToplamFiyat] = useState(85.50);
+    const [malzemeHatasi, setMalzemeHatasi] = useState("");
+    const [siparisAdeti, setSiparisAdeti] = useState(1);
+
     const ekMalzemelerListesi = ["Pepperoni",
         "Tavuk Izgara",
         "Mısır",
@@ -24,6 +27,7 @@ export default function OrderForm() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
+
         if (!pizzaBoyutu) {
             setError("Lütfen pizza boyutunu seçiniz!");
             return;
@@ -34,8 +38,14 @@ export default function OrderForm() {
             return;
         }
 
+        if (ekMalzemeler.length < 4) {
+            setMalzemeHatasi("En az 4 malzeme seçmelisiniz.");
+            return;
+        }
+
         //Seçimler geçerliyse hata sıfırlansın ve sipariş işlensin.
         setError("");
+        setMalzemeHatasi("");
         console.log("Pizza Boyutu:", pizzaBoyutu);
         console.log("Hamur Kalınlığı:", hamurKalınlığı || "Seçim yapılmadı");
         console.log("Ek Malzemeler:", ekMalzemeler);
@@ -59,6 +69,13 @@ export default function OrderForm() {
             }
         } else {
             updatedMalzemeler = updatedMalzemeler.filter((item) => item !== value); // Malzeme kaldır
+        }
+
+        // Minimum malzeme kontrolü
+        if (updatedMalzemeler.length < 4) {
+            setMalzemeHatasi("En az 4 malzeme seçmelisiniz.");
+        } else {
+            setMalzemeHatasi(""); // Hata yoksa mesajı sıfırla
         }
         setEkMalzemeler(updatedMalzemeler);
         setToplamFiyat(85.50 + updatedMalzemeler.length * 5);
@@ -137,6 +154,7 @@ export default function OrderForm() {
                         </select>
                     </div>
                 </div>
+                {error && <p style={{ color: "red" }}>{error}</p>}
 
                 <div className='ek-malzemeler'>
                     <h2>Ek Malzemeler</h2>
@@ -152,21 +170,61 @@ export default function OrderForm() {
                             {malzeme}
                         </label>
                     ))}
+                    {malzemeHatasi && <p style={{ color: "red" }}>{malzemeHatasi}</p>}
                 </div>
 
+                <div className='siparis-notu'>
+                    <h2>Sipariş Notu</h2>
+                    <textarea
+                        placeholder='Siparişine eklemek istediğin bir not var mı?'
+                        rows="3"
+                        cols="50"></textarea>
+                </div>
+
+                <hr className='section-divider' />
 
 
 
 
+                <div className="siparis-counter-container">
+                    <div className="counter">
+                        <button
+                            className="decrement"
+                            onClick={() => {
+                                if (siparisAdeti > 0) setSiparisAdeti(siparisAdeti - 1);
+                            }}
+                        >
+                            -
+                        </button>
+                        <span className="count">{siparisAdeti}</span>
+                        <button
+                            className="increment"
+                            onClick={() => setSiparisAdeti(siparisAdeti + 1)}
+                        >
+                            +
+                        </button>
+                    </div>
 
 
+                    {/* Sipariş Toplamı */}
+                    <div className="siparis-toplam">
+                        <h2>Sipariş Toplamı</h2>
+                        <div className='secimler'>
+                            <h3>Seçimler</h3>
+                            <p>{ekMalzemeler.length * 5}₺</p>
+                        </div>
 
+                        <div className='toplam'>
+                            <h3>Toplam</h3>
+                            <p>{(toplamFiyat * siparisAdeti).toFixed(2)}₺</p>
+                        </div>
 
-                {error && <p style={{ color: "red" }}>{error}</p>}
-
-                {/* Form Gönderme 
-                <button type="submit">SİPARİŞ VER</button>*/}
-
+                    </div>
+                </div>
+                {/* Sipariş Ver Butonu */}
+                <button className="siparis-ver" onClick={handleSubmit}>
+                    SİPARİŞ VER
+                </button>
             </form >
 
         </>

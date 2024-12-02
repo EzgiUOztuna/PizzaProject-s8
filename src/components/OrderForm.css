@@ -3,7 +3,6 @@ html {
     margin: 0;
     padding: 0;
     font-family: 'Barlow', sans-serif;
-    height: 100%;
 }
 
 /* Header */
@@ -103,7 +102,7 @@ form {
     padding: 0;
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+
 }
 
 .boyut-hamur {
@@ -195,4 +194,174 @@ select {
 
 .ek-malzemeler input {
     margin: 0;
+}
+
+.siparis-notu {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    max-width: 33.25rem;
+}
+
+.siparis-notu h2 {
+    font-size: 1.25rem;
+    font-family: 'Barlow', sans-serif;
+    font-weight: 600;
+    color: #292929;
+}
+
+.siparis-notu textarea {
+    padding: 0.75rem;
+    border-color: #5F5F5F;
+    border-radius: 0.5rem;
+    color: #5F5F5F;
+    font-size: 0.87rem;
+    font-family: 'Barlow', sans-serif;
+    resize: none;
+    /* Kullanıcı boyutunu değiştiremesin */
+}
+
+.section-divider {
+    border: none;
+    /* Varsayılan kenarlığı kaldır */
+    border-top: 1px solid #292929;
+    /* Üst çizgi ekle */
+    margin: 2.5rem 0;
+    /* Çizginin üst ve altına boşluk */
+    max-width: 33.25rem;
+
+}
+
+
+.siparis-counter-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 0;
+}
+
+.counter {
+    width: 10.62rem;
+    height: 3.56rem;
+    display: flex;
+    align-items: center;
+}
+
+.counter button {
+    width: 3.56rem;
+    height: 3.56rem;
+    background-color: #FDC913;
+    border-color: #FDC913;
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: black;
+    cursor: pointer;
+    border: none;
+}
+
+.decrement {
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+}
+
+.increment {
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+}
+
+
+.count {
+    background-color: white;
+    border: 1px solid #D9D9D9;
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3.56rem;
+    height: 3.56rem;
+    margin-bottom: 0;
+}
+
+
+.siparis-toplam {
+    margin-left: 1rem;
+    padding-left: 3rem;
+    width: 21.87rem;
+    border: 1px solid #5F5F5F;
+    border-bottom: #FDC913;
+    border-radius: 0.5rem;
+    line-height: 0.25rem;
+    margin-bottom: 0;
+
+}
+
+.siparis-toplam h2 {
+    font-size: 1.25rem;
+    font-family: 'Barlow', sans-serif;
+    font-weight: 600;
+    color: #292929;
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+    padding-top: 1rem;
+
+}
+
+.secimler {
+    font-size: 1.125rem;
+    font-family: 'Barlow', sans-serif;
+    font-weight: 600;
+    color: #5F5F5F;
+    display: flex;
+    /* Flexbox ile yan yana dizme */
+    justify-content: space-between;
+    /* Öğeleri sağa ve sola yaslar */
+    align-items: center;
+    margin-right: 1rem;
+    padding-right: 3rem;
+
+}
+
+.toplam {
+    font-size: 1.125rem;
+    font-family: 'Barlow', sans-serif;
+    font-weight: 600;
+    color: #CE2829;
+    display: flex;
+    /* Flexbox ile yan yana dizme */
+    justify-content: space-between;
+    /* Öğeleri sağa ve sola yaslar */
+    align-items: center;
+    margin-right: 1rem;
+    padding-right: 3rem;
+    margin-bottom: 2rem;
+}
+
+.siparis-ver {
+    width: 21.80rem;
+    /* Sipariş toplamıyla aynı genişlik */
+    height: 3.87rem;
+    /* Sabit yükseklik */
+    margin-left: 1rem;
+    /* Aynı hizalamayı koru */
+    background-color: #FDC913;
+    /* Arka plan rengi */
+    border: 1px solid #FDC913;
+    /* Kenar görünümü */
+    border-radius: 0.5rem;
+    /* Yuvarlak köşeler */
+    font-size: 1.125rem;
+    font-family: 'Barlow', sans-serif;
+    font-weight: 600;
+    color: #292929;
+    display: flex;
+    justify-content: center;
+    /* Buton içeriğini yatayda ortala */
+    align-items: center;
+    /* Buton içeriğini dikeyde ortala */
+    cursor: pointer;
+    /* İmleç değişimi */
+    margin-bottom: 2.5rem;
+    margin-left: auto;
 }
