@@ -4,9 +4,9 @@ html {
     padding: 0;
     font-family: 'Barlow', sans-serif;
     height: 100%;
-
 }
 
+/* Header */
 .header-container {
     display: flex;
     flex-direction: column;
@@ -20,21 +20,16 @@ html {
 .logo {
     width: 23rem;
     margin-bottom: 3rem;
-    /* Logo ile bağlantılar arasında boşluk */
 }
 
-/* Bağlantılar için Flexbox düzeni */
 .links-container {
     display: flex;
     justify-content: center;
-    /* Bağlantıları yatayda ortalar */
-    margin-right: 20rem;
+    margin-right: 21.6rem;
     gap: 1rem;
-    /* Bağlantılar arasındaki boşluk */
-    width: 12rem;
+    max-width: 34rem;
 }
 
-/* Bağlantıların stili */
 .links-container a {
     text-decoration: none;
     color: white;
@@ -47,8 +42,10 @@ html {
     color: darkred;
 }
 
+
+/* Main */
 .titleOne {
-    max-width: 32rem;
+    max-width: 33.25rem;
     font-size: 1.40rem;
     margin: 2rem auto;
     padding: 0;
@@ -60,7 +57,7 @@ html {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 32rem;
+    max-width: 33.25rem;
     margin: 2rem auto;
 }
 
@@ -75,7 +72,6 @@ html {
     display: flex;
     justify-content: space-between;
     gap: 1rem;
-    /* Yıldız ve sayılar arasında boşluk */
     font-size: 1rem;
     width: 7.56rem;
 }
@@ -94,3 +90,54 @@ html {
     margin: 2rem auto;
     line-height: 1.8rem;
 }
+
+
+/* Main - Boyut & Hamur Seç */
+
+form {
+    max-width: 33.25rem;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    gap: 9rem;
+}
+
+.boyut-secim {
+    max-width: 9.18rem;
+}
+
+.boyut-secim h2 {
+    font-size: 1.25rem;
+    font-family: 'Barlow', sans-serif;
+    font-weight: 600;
+}
+
+.boyut-secim label {
+    display: flex;
+    margin: 0.5em 0;
+    font-family: 'Barlow', sans-serif;
+    line-height: 1.87rem;
+}
+
+input {
+    max-width: 6.31rem;
+}
+
+.hamur-secim {
+    max-width: 9.93rem;
+    font-family: 'Barlow', sans-serif;
+}
+
+select {
+    max-width: 9.87rem;
+}
+
+.hamur-secim h2 {
+    max-width: 9.87rem;
+    font-size: 1.25rem;
+    font-family: 'Barlow', sans-serif;
+    font-weight: 600;
+}
+
+
+/* Main - Ek Malzemeler */
