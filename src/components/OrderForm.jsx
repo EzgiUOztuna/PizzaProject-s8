@@ -1,31 +1,23 @@
 import { BrowserRouter as Router, Link } from 'react-router-dom';
 import React, { useState } from 'react';
 import "./OrderForm.css"
+import axios from 'axios';
+import { useHistory } from 'react-router-dom';
 
 export default function OrderForm() {
     const [pizzaBoyutu, setPizzaBoyutu] = useState(""); // Pizza boyutunu tutucak.
-    const [hamurKalınlığı, setHamurKalınlığı] = useState(""); // Hamur seçimi yapılacak.
+    const [hamurKalınlıgı, setHamurKalınlıgı] = useState(""); // Hamur seçimi yapılacak.
     const [error, setError] = useState(""); //Hata mesajını tutucak.
     const [ekMalzemeler, setEkMalzemeler] = useState([]);
     const [toplamFiyat, setToplamFiyat] = useState(85.50);
     const [malzemeHatasi, setMalzemeHatasi] = useState("");
     const [siparisAdeti, setSiparisAdeti] = useState(1);
 
-    const ekMalzemelerListesi = ["Pepperoni",
-        "Tavuk Izgara",
-        "Mısır",
-        "Sarımsak",
-        "Ananas",
-        "Sosis",
-        "Soğan",
-        "Sucuk",
-        "Biber",
-        "Kabak",
-        "Kanada Jambonu",
-        "Domates",
-        "Jalepeno"];
+    const history = useHistory();
 
-    const handleSubmit = (event) => {
+    const ekMalzemelerListesi = ["Pepperoni", "Tavuk Izgara", "Mısır", "Sarımsak", "Ananas", "Sosis", "Soğan", "Sucuk", "Biber", "Kabak", "Kanada Jambonu", "Domates", "Jalepeno"];
+
+    const handleSubmit = async (event) => {
         event.preventDefault();
 
         if (!pizzaBoyutu) {
@@ -33,7 +25,7 @@ export default function OrderForm() {
             return;
         }
 
-        if (!hamurKalınlığı) {
+        if (!hamurKalınlıgı) {
             setError("Lütfen hamur kalınlığını seçiniz!");
             return;
         }
@@ -46,15 +38,28 @@ export default function OrderForm() {
         //Seçimler geçerliyse hata sıfırlansın ve sipariş işlensin.
         setError("");
         setMalzemeHatasi("");
-        console.log("Pizza Boyutu:", pizzaBoyutu);
-        console.log("Hamur Kalınlığı:", hamurKalınlığı || "Seçim yapılmadı");
-        console.log("Ek Malzemeler:", ekMalzemeler);
 
-        alert("Sipariş başarıyla oluşturuldu!");
+        const siparisDetaylari = {
+            pizzaBoyutu, hamurKalınlıgı, ekMalzemeler, siparisAdeti, toplamFiyat: (toplamFiyat * siparisAdeti).toFixed(2),
+        };
+
+        try {
+            // API'ye POST isteği gönder
+            const response = await axios.post("https://reqres.in/api/pizza", siparisDetaylari);
+
+            // Gelen yanıtı console'a yaz
+            console.log("Sipariş Özeti:", response.data);
+
+            history.push("/confirmation");
+        } catch (error) {
+            console.error("Sipariş oluşturulurken bir hata oluştu:", error);
+            alert("Bir hata oluştu, lütfen tekrar deneyin.");
+        }
     };
 
+
     const handlePizzaBoyutChange = (e) => setPizzaBoyutu(e.target.value);
-    const handleHamurKalınlıgıChange = (e) => setHamurKalınlığı(e.target.value);
+    const handleHamurKalınlıgıChange = (e) => setHamurKalınlıgı(e.target.value);
 
     const handleMalzemeChange = (e) => {
         const { value, checked } = e.target;
@@ -144,7 +149,7 @@ export default function OrderForm() {
                     <div className='hamur-secim'>
                         <h2>Hamur Seç<span style={{ color: "red" }}>*</span></h2>
                         <select
-                            value={hamurKalınlığı}
+                            value={hamurKalınlıgı}
                             onChange={handleHamurKalınlıgıChange}
                         >
                             <option value="">Hamur Kalınlığı</option>
@@ -229,4 +234,4 @@ export default function OrderForm() {
 
         </>
     );
-}
+};
