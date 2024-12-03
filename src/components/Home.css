@@ -1,0 +1,57 @@
+.image {
+    position: relative;
+}
+
+.home-banner {
+    width: 100%;
+    height: auto;
+}
+
+/* Logo */
+.home-logo {
+    position: absolute;
+    top: 10%;
+    /* Üstten %20 mesafe */
+    left: 50%;
+    /* Yatayda ortalamak için */
+    transform: translateX(-50%);
+    /* Yatayda tam ortalama */
+    width: 22.62rem;
+    /* Logonun genişliği */
+    height: auto;
+    /* Yükseklik orantılı */
+    margin-bottom: 3rem;
+}
+
+/* Yazı */
+.paragraf-home {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 5.37rem;
+    color: white;
+    font-weight: 300;
+    text-align: center;
+    width: 43.32rem;
+    font-family: "Roboto Condensed", sans-serif;
+    padding-top: 2rem;
+}
+
+/* Buton */
+.button-home {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #FDC913;
+    color: black;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 3rem;
+    font-size: 1.12rem;
+    cursor: pointer;
+    width: 12rem;
+    height: 3.5rem;
+    font-family: 'Barlow', sans-serif;
+}

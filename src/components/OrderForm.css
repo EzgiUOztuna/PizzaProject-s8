@@ -14,11 +14,14 @@ html {
     height: 10rem;
     background-color: #CE2829;
     color: white;
+    gap: 0;
 }
 
 .logo {
     width: 23rem;
-    margin-bottom: 3rem;
+    height: 2.86rem;
+    padding-top: 2rem;
+
 }
 
 .links-container {
@@ -35,6 +38,8 @@ html {
     font-size: 1rem;
     font-family: 'Barlow', sans-serif;
     gap: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
 }
 
 .links-container a:hover {
@@ -172,6 +177,7 @@ select {
     /* Başlık, tüm sütunları kapsasın */
     color: #292929;
     margin: 0;
+    margin-top: 2.5rem;
 
 }
 
@@ -209,6 +215,7 @@ select {
     font-family: 'Barlow', sans-serif;
     font-weight: 600;
     color: #292929;
+    margin-top: 2.5rem;
 }
 
 .siparis-notu textarea {
