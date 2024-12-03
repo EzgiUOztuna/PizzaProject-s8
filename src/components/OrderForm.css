@@ -34,6 +34,7 @@ html {
     color: white;
     font-size: 1rem;
     font-family: 'Barlow', sans-serif;
+    gap: 1rem;
 }
 
 .links-container a:hover {

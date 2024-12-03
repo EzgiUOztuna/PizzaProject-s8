@@ -4,19 +4,22 @@ import "./OrderForm.css"
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
 
+const initialPrice = 85.50;
+
 export default function OrderForm() {
     const [pizzaBoyutu, setPizzaBoyutu] = useState(""); // Pizza boyutunu tutucak.
     const [hamurKalınlıgı, setHamurKalınlıgı] = useState(""); // Hamur seçimi yapılacak.
     const [error, setError] = useState(""); //Hata mesajını tutucak.
     const [ekMalzemeler, setEkMalzemeler] = useState([]);
-    const [toplamFiyat, setToplamFiyat] = useState(85.50);
+    const [toplamFiyat, setToplamFiyat] = useState(initialPrice);
     const [malzemeHatasi, setMalzemeHatasi] = useState("");
     const [siparisAdeti, setSiparisAdeti] = useState(1);
 
-    const history = useHistory();
-
     const ekMalzemelerListesi = ["Pepperoni", "Tavuk Izgara", "Mısır", "Sarımsak", "Ananas", "Sosis", "Soğan", "Sucuk", "Biber", "Kabak", "Kanada Jambonu", "Domates", "Jalepeno"];
 
+    const history = useHistory();
+
+    /* 📌 HANDLE SUBMIT */
     const handleSubmit = async (event) => {
         event.preventDefault();
 
@@ -34,7 +37,6 @@ export default function OrderForm() {
             setMalzemeHatasi("En az 4 malzeme seçmelisiniz.");
             return;
         }
-
         //Seçimler geçerliyse hata sıfırlansın ve sipariş işlensin.
         setError("");
         setMalzemeHatasi("");
@@ -43,24 +45,33 @@ export default function OrderForm() {
             pizzaBoyutu, hamurKalınlıgı, ekMalzemeler, siparisAdeti, toplamFiyat: (toplamFiyat * siparisAdeti).toFixed(2),
         };
 
+        /* 📌 API'ye POST isteği gönder */
         try {
-            // API'ye POST isteği gönder
             const response = await axios.post("https://reqres.in/api/pizza", siparisDetaylari);
-
-            // Gelen yanıtı console'a yaz
-            console.log("Sipariş Özeti:", response.data);
-
+            console.log("Sipariş Özeti:", response.data); // Gelen yanıtı console'a yaz
             history.push("/confirmation");
+
         } catch (error) {
             console.error("Sipariş oluşturulurken bir hata oluştu:", error);
             alert("Bir hata oluştu, lütfen tekrar deneyin.");
         }
     };
 
+    /* 📌 HANDLE DECREASE - (-) BUTONU İÇİN */
+    const handleDecrease = (e) => {
+        if (siparisAdeti > 1) {
+            setSiparisAdeti(siparisAdeti - 1);
+        }
+    };
 
+    /* 📌 HANDLE INCREASE - (+) BUTONU İÇİN */
+    const handleIncrease = () => {
+        setSiparisAdeti(siparisAdeti + 1);
+    }
+
+    /* 📌 HANDLE CHANGE'LER */
     const handlePizzaBoyutChange = (e) => setPizzaBoyutu(e.target.value);
     const handleHamurKalınlıgıChange = (e) => setHamurKalınlıgı(e.target.value);
-
     const handleMalzemeChange = (e) => {
         const { value, checked } = e.target;
         let updatedMalzemeler = [...ekMalzemeler];
@@ -73,46 +84,52 @@ export default function OrderForm() {
                 return;
             }
         } else {
-            updatedMalzemeler = updatedMalzemeler.filter((item) => item !== value); // Malzeme kaldır
+            updatedMalzemeler = updatedMalzemeler.filter((item) => item !== value); // Seçtiğim malzemeyi kaldırmak istersem.
         }
 
-        // Minimum malzeme kontrolü
-        if (updatedMalzemeler.length < 4) {
+        if (updatedMalzemeler.length < 4) { // Minimum malzeme kontrolü
             setMalzemeHatasi("En az 4 malzeme seçmelisiniz.");
         } else {
             setMalzemeHatasi(""); // Hata yoksa mesajı sıfırla
         }
         setEkMalzemeler(updatedMalzemeler);
-        setToplamFiyat(85.50 + updatedMalzemeler.length * 5);
+
+        setToplamFiyat(initialPrice + updatedMalzemeler.length * 5);
 
     }
 
-
+    /* 📌 RETURN */
     return (
         <>
+            {/* 📌 HEADER */}
             <div className='header-container'>
                 <img src="/Assets/Iteration-1-assets/logo.svg" alt="Logo" className="logo" />
-                <Router>
-                    <div className='links-container'>
-                        <Link to="/"> {/*buralara geri dönebiliriz 📍*/}
-                            Anasayfa
-                        </Link>
-                        <Link to="/" style={{ fontWeight: 700, minWidth: '105px' }}>Sipariş Oluştur {/*buralara geri dönebiliriz 📍*/}
-                        </Link>
-                    </div>
-                </Router>
+
+                <div className='links-container'>
+                    <Link to="/home">
+                        Anasayfa
+                    </Link>
+                    <Link to="/" style={{ fontWeight: 700, minWidth: '105px' }}>
+                        Sipariş Oluştur
+                    </Link>
+                </div>
             </div>
+
+            {/* 📌 MAIN - BAŞLIK / PRICE / RATING'LER */}
             <p className='titleOne'>Position Absolute Acı Pizza</p>
             <div className="price-rating-container">
-                <span className="price">85.50₺</span>
+                <span className="price">{initialPrice}₺</span>
                 <span className="rating">4.9
                     <span className="rating-count">(200)</span>
                 </span>
             </div>
+
+            {/* 📌 MAIN - PARAGRAF */}
             <p className='desc'>
                 Frontent Dev olarak hala position:absolute kullanıyorsan bu çok acı pizza tam sana göre. Pizza, domates, peynir ve genellikle çeşitli diğer malzemelerle kaplanmış, daha sonra geleneksel olarak odun ateşinde bir fırında yüksek sıcaklıkta pişirilen, genellikle yuvarlak, düzleştirilmiş mayalı buğday bazlı hamurdan oluşan İtalyan kökenli lezzetli bir yemektir. . Küçük bir pizzaya bazen pizzetta denir.
             </p>
 
+            {/* 📌 MAIN - BOYUT SEÇME */}
             <form onSubmit={handleSubmit}>
                 <div className='boyut-hamur' >
                     <div className='boyut-secim'>
@@ -146,6 +163,7 @@ export default function OrderForm() {
                         </label>
                     </div>
 
+                    {/* 📌 MAIN - HAMUR KALINLIĞI SEÇME */}
                     <div className='hamur-secim'>
                         <h2>Hamur Seç<span style={{ color: "red" }}>*</span></h2>
                         <select
@@ -161,6 +179,7 @@ export default function OrderForm() {
                 </div>
                 {error && <p style={{ color: "red" }}>{error}</p>}
 
+                {/* 📌 MAIN - EK MALZEMELERİ SEÇME */}
                 <div className='ek-malzemeler'>
                     <h2>Ek Malzemeler</h2>
                     <p>En fazla 10 malzeme seçebilirsiniz. 5₺</p>
@@ -178,6 +197,7 @@ export default function OrderForm() {
                     {malzemeHatasi && <p style={{ color: "red" }}>{malzemeHatasi}</p>}
                 </div>
 
+                {/* 📌 MAIN - SİPARİŞ NOTU */}
                 <div className='siparis-notu'>
                     <h2>Sipariş Notu</h2>
                     <textarea
@@ -188,30 +208,26 @@ export default function OrderForm() {
 
                 <hr className='section-divider' />
 
-
-
-
+                {/* 📌 FOOTER - SİPARİŞ COUNTER */}
                 <div className="siparis-counter-container">
                     <div className="counter">
                         <button
+                            type="button"
                             className="decrement"
-                            onClick={() => {
-                                if (siparisAdeti > 0) setSiparisAdeti(siparisAdeti - 1);
-                            }}
-                        >
+                            onClick={handleDecrease}>
                             -
                         </button>
                         <span className="count">{siparisAdeti}</span>
                         <button
+                            type="button"
                             className="increment"
-                            onClick={() => setSiparisAdeti(siparisAdeti + 1)}
-                        >
+                            onClick={handleIncrease}>
                             +
                         </button>
                     </div>
 
 
-                    {/* Sipariş Toplamı */}
+                    {/* 📌 FOOTER - SİPARİŞ TOPLAMI */}
                     <div className="siparis-toplam">
                         <h2>Sipariş Toplamı</h2>
                         <div className='secimler'>
@@ -223,10 +239,10 @@ export default function OrderForm() {
                             <h3>Toplam</h3>
                             <p>{(toplamFiyat * siparisAdeti).toFixed(2)}₺</p>
                         </div>
-
                     </div>
                 </div>
-                {/* Sipariş Ver Butonu */}
+
+                {/* 📌 FOOTER - SİPARİŞ VER BUTONU */}
                 <button className="siparis-ver" onClick={handleSubmit}>
                     SİPARİŞ VER
                 </button>
