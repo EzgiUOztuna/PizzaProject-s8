@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import React, { useState } from 'react';
 import "./OrderForm.css";
 import axios from 'axios';
@@ -106,17 +106,17 @@ export default function OrderForm() {
                 <img src="/Assets/Iteration-1-assets/logo.svg" alt="Logo" className="logo" />
 
                 <div className='links-container'>
-                    <Link to="/home">
+                    <Link to="/">
                         Anasayfa
                     </Link>
                     <Link to="/" style={{ fontWeight: 700, minWidth: '105px' }}>
                         Sipariş Oluştur
                     </Link>
                 </div>
-            </div>
+            </div >
 
             {/* 📌 MAIN - BAŞLIK / PRICE / RATING'LER */}
-            <p className='titleOne'>Position Absolute Acı Pizza</p>
+            <p className='titleOne' > Position Absolute Acı Pizza</p>
             <div className="price-rating-container">
                 <span className="price">{initialPrice}₺</span>
                 <span className="rating">4.9

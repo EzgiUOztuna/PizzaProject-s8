@@ -8,8 +8,8 @@ export default function App() {
   return (
     <Router>
       <Switch>
-        <Route exact path="/home" component={Home} />
-        <Route exact path="/" component={OrderForm} />
+        <Route exact path="/" component={Home} />
+        <Route exact path="/order" component={OrderForm} />
         <Route exact path="/confirmation" component={Confirmation} />
       </Switch>
     </Router>

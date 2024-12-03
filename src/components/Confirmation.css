@@ -1,0 +1,23 @@
+body.confirmation-bg {
+    background: #CE2829;
+}
+
+.conf {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 10rem;
+}
+
+.confirmation-logo {
+    margin-top: 15rem;
+}
+
+.conf h1 {
+    color: white;
+    font-size: 5.37rem;
+    font-weight: 300;
+    width: 50rem;
+    text-align: center;
+
+}

@@ -1,10 +1,15 @@
 import React from 'react';
+import "./Confirmation.css";
 export default function Confirmation() {
+
+    document.body.classList.add('confirmation-bg');
+
     return (
-        <div style={{ textAlign: 'center', marginTop: '50px' }}>
-            <h1>🎉 Siparişiniz Başarıyla Tamamlandı! 🎉</h1>
-            <p>Afiyet olsun! Siparişiniz en kısa sürede hazırlanıp teslim edilecektir.</p>
-        </div>
+        <div className='conf'>
+            <img className="confirmation-logo" src='Assets/Iteration-1-assets/confirmation-logo copy.svg' />
+            <h1>TEBRİKLER! SİPARİŞİNİZ ALINDI!</h1>
+
+        </div >
     );
 
 }

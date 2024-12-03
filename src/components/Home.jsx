@@ -1,5 +1,6 @@
 import React from 'react';
 import "./Home.css";
+import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 
 export default function Home() {
     return (
@@ -8,7 +9,10 @@ export default function Home() {
             <img className="home-logo" src='/Assets/Iteration-1-assets/home-logo.svg' />
             <p className='paragraf-home'>KOD ACIKTIRIR PİZZA,DOYURUR
             </p>
-            <button className='button-home'>ACIKTIM</button>
+            <Link to="/order">
+                <button className='button-home'>ACIKTIM</button>
+            </Link>
+
         </div >
     );
 }
