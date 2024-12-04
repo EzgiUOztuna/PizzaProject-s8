@@ -17,7 +17,21 @@ body.confirmation-bg {
     color: white;
     font-size: 5.37rem;
     font-weight: 300;
+    font-family: "Roboto Condensed", sans-serif;
     width: 50rem;
     text-align: center;
 
+}
+
+@media (max-width: 540px) {
+    body.confirmation-bg {
+        background: #CE2829;
+    }
+
+    .conf h1 {
+        color: white;
+        font-size: 4.5rem;
+        width: 24.87rem;
+        text-align: center;
+    }
 }

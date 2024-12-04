@@ -55,3 +55,61 @@
     height: 3.5rem;
     font-family: 'Barlow', sans-serif;
 }
+
+/* Responsive Media Queries */
+@media (max-width: 768px) {
+    .home-logo {
+        width: 15rem;
+        top: 15%;
+        /* Logonun üstten konumunu biraz düşürdük */
+    }
+
+    .paragraf-home {
+        font-size: 2rem;
+        /* Yazı boyutu küçültüldü */
+        width: 90%;
+        /* Daha küçük ekranlarda daha fazla sığması için genişlik ayarlandı */
+        top: 35%;
+        /* Yazının yerleşimi aşağı çekildi */
+        line-height: 1.5;
+        /* Daha iyi okunabilirlik için satır yüksekliği */
+    }
+
+    .button-home {
+        top: 60%;
+        /* Butonun konumu mobilde optimize edildi */
+        width: 10rem;
+        /* Buton genişliği biraz küçültüldü */
+        font-size: 1rem;
+        /* Yazı boyutu ayarlandı */
+    }
+}
+
+@media (max-width: 480px) {
+    .home-logo {
+        width: 12rem;
+        /* Daha küçük ekranlarda logonun boyutu küçültüldü */
+        top: 10%;
+        /* Üst boşluk ayarlandı */
+    }
+
+    .paragraf-home {
+        font-size: 1.5rem;
+        /* Çok küçük cihazlar için yazı boyutu daha da küçültüldü */
+        width: 80%;
+        /* Daha dar genişlik */
+        top: 30%;
+        /* Daha iyi yerleşim için yukarı kaydırıldı */
+    }
+
+    .button-home {
+        top: 50%;
+        /* Butonun pozisyonu daha yukarı taşındı */
+        width: 8rem;
+        /* Buton genişliği küçültüldü */
+        font-size: 0.9rem;
+        /* Yazı boyutu küçültüldü */
+        height: 3rem;
+        /* Buton yüksekliği ayarlandı */
+    }
+}

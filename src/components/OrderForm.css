@@ -373,3 +373,41 @@ select {
     margin-bottom: 2.5rem;
     margin-left: auto;
 }
+
+
+/* Responsive Media Queries */
+@media (max-width: 768px) {
+    .header-container {
+        height: auto;
+        padding: 1rem 0;
+    }
+
+    .logo {
+        width: 15rem;
+    }
+
+    .links-container {
+        flex-direction: column;
+    }
+
+    .price-rating-container {
+        gap: 0.5rem;
+    }
+
+    .titleOne {
+        font-size: 1.2rem;
+    }
+
+    .ek-malzemeler {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .siparis-counter-container {
+        gap: 0.5rem;
+    }
+
+    .siparis-ver {
+        font-size: 1rem;
+        padding: 0.8rem;
+    }
+}
