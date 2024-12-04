@@ -39,6 +39,7 @@
     font-family: "Roboto Condensed", sans-serif;
     width: 36.68rem;
     text-align: center;
+    align-items: center;
     margin: 0;
     padding-bottom: 2.5rem;
 }
@@ -59,12 +60,185 @@
     padding-top: 1.5rem;
 }
 
+/* PİZZA BOYUTU */
+.conf-pizza-boyutu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 11.81rem;
+    margin-top: 2.5rem;
+
+}
+
+.conf-pizza-boyutu h3 {
+    color: white;
+    font-size: 1rem;
+    font-weight: 400;
+    font-family: "Barlow", sans-serif;
+    padding-top: 0;
+    text-align: left;
+}
+
+.conf-pizza-boyutu p {
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: "Barlow", sans-serif;
+    padding-bottom: 0;
+    text-align: left;
+}
+
+/* HAMUR KALINLIĞI */
+.conf-hamur-kalinligi {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 11.81rem;
+    margin-top: .5rem;
+}
+
+.conf-hamur-kalinligi h3 {
+    color: white;
+    font-size: 1rem;
+    font-weight: 400;
+    font-family: "Barlow", sans-serif;
+    padding-top: 0;
+    text-align: left;
+}
+
+.conf-hamur-kalinligi p {
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: "Barlow", sans-serif;
+    padding-bottom: 0;
+    text-align: left;
+
+}
+
+/* EK MALZEMELER */
+.conf-ek-malzemeler {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 11.81rem;
+    margin-top: .5rem;
+    flex-wrap: wrap;
+}
+
+.conf-ek-malzemeler h3 {
+    color: white;
+    font-size: 1rem;
+    font-weight: 400;
+    font-family: "Barlow", sans-serif;
+    padding-top: 0;
+    text-align: left;
+}
+
+.conf-ek-malzemeler p {
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: "Barlow", sans-serif;
+    padding-bottom: 0;
+    text-align: left;
+
+}
+
+/* SİPARİŞ TOPLAMI */
+.conf-toplam-fiyat {
+    width: 21.87rem;
+    border: 1px solid white;
+    margin: 5rem 0;
+}
+
+.conf-toplam-fiyat h5 {
+    font-size: 1.25rem;
+    font-family: 'Barlow', sans-serif;
+    font-weight: 600;
+    color: white;
+    margin: 2rem 0 1.5rem 2.5rem;
+    padding-top: 1rem;
+
+}
+
+.conf-secimler {
+    font-size: 1.125rem;
+    font-family: 'Barlow', sans-serif;
+    font-weight: 600;
+    color: white;
+    display: flex;
+    /* Flexbox ile yan yana dizme */
+    justify-content: space-between;
+    /* Öğeleri sağa ve sola yaslar */
+    align-items: center;
+    margin-right: 1rem;
+    padding-right: 3rem;
+    margin-left: 2.5rem;
+}
+
+.conf-secimler h3 {
+    font-size: 1.125rem;
+    font-family: 'Barlow', sans-serif;
+    font-weight: 600;
+    color: white;
+    padding-top: 0;
+    text-align: left;
+}
+
+.conf-secimler p {
+    font-size: 1.125rem;
+    font-family: 'Barlow', sans-serif;
+    font-weight: 600;
+    color: white;
+    padding-bottom: 0;
+}
+
+.conf-toplam {
+    font-size: 1.125rem;
+    font-family: 'Barlow', sans-serif;
+    font-weight: 600;
+    color: white;
+    display: flex;
+    /* Flexbox ile yan yana dizme */
+    justify-content: space-between;
+    /* Öğeleri sağa ve sola yaslar */
+    align-items: center;
+    margin-right: 1rem;
+    padding-right: 3rem;
+    margin-bottom: 2rem;
+}
+
+.conf-toplam h3 {
+    font-size: 1.125rem;
+    font-family: 'Barlow', sans-serif;
+    font-weight: 600;
+    color: white;
+    display: flex;
+    /* Flexbox ile yan yana dizme */
+    justify-content: space-between;
+    /* Öğeleri sağa ve sola yaslar */
+    align-items: center;
+    margin-right: 1rem;
+    padding-right: 3rem;
+    margin-bottom: 2rem;
+}
 
 
-
-
-
-
+.conf-toplam p {
+    font-size: 1.125rem;
+    font-family: 'Barlow', sans-serif;
+    font-weight: 600;
+    color: white;
+    display: flex;
+    /* Flexbox ile yan yana dizme */
+    justify-content: space-between;
+    /* Öğeleri sağa ve sola yaslar */
+    align-items: center;
+    margin-right: 1rem;
+    padding-right: 3rem;
+    margin-bottom: 2rem;
+}
 
 
 

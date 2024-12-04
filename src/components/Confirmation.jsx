@@ -4,10 +4,6 @@ import "../components/OrderForm.jsx";
 
 const Confirmation = (props) => {
     const { formData } = props;
-    console.log(formData);
-    if (!formData) {
-        return <p>Loading...</p>; // Ya da başka bir yedek mesaj
-    }
 
     document.body.classList.add('confirmation-bg');
 
@@ -20,24 +16,38 @@ const Confirmation = (props) => {
             <hr className='conf-section-divider' />
 
             <h4>Position Absolute Acı Pizza</h4>
-            <div className='conf-pizza-boyutu'>Boyut: {formData.pizzaBoyutu}</div>
-            <div className='conf-hamur-kalinligi'>Hamur: {formData.hamurKalınlıgı}</div>
+
+            <div className='conf-pizza-boyutu'>
+                <h3>Boyut:</h3>
+                <p>{formData.pizzaBoyutu}</p>
+            </div>
+
+            <div className='conf-hamur-kalinligi'>
+                <h3>Hamur:</h3>
+                <p>{formData.hamurKalınlıgı}</p>
+            </div>
+
             <div className='conf-ek-malzemeler'>
-                <h5>Ek Malzemeler:</h5>
-                <ul>
-                    {formData.ekMalzemeler.map((malzeme, index) => (
-                        <li key={index}>{malzeme}</li>
-                    ))}
-                </ul>
+                <h3>Ek Malzemeler:</h3>
+                <p>{formData.ekMalzemeler.map((malzeme, index) => malzeme).join(', ')}</p>
             </div>
 
             <div className='conf-toplam-fiyat'>
                 <h5>Sipariş Toplamı</h5>
-                <p>{formData.toplamFiyat}₺</p>
+                <div className='conf-secimler'>
+                    <h3>Seçimler</h3>
+                    <p>{formData.ekMalzemeler.length * 5}₺</p>
+                </div>
+                <div className='conf-toplam'>
+                    <h3>Toplam</h3>
+                    <p>{(formData.toplamFiyat * formData.siparisAdeti).toFixed(2)}₺</p>
+                </div>
             </div>
         </div >
     );
 };
+
+
 
 
 export default Confirmation;
