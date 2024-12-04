@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import OrderForm from './components/OrderForm'; // Sipariş formu
 import Confirmation from './components/Confirmation'; // Sipariş onay sayfası
 import Home from './components/Home';
+import ConfirmationFooter from './components/ConfirmationFooter';
 
 export default function App() {
 
@@ -22,6 +23,7 @@ export default function App() {
         </Route>
       </Switch>
     </Router>
+
 
   );
 }
