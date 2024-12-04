@@ -140,8 +140,8 @@ const OrderForm = (props) => {
                         <label>
                             <input
                                 type="radio"
-                                value="Küçük"
-                                checked={pizzaBoyutu === "Küçük"}
+                                value="S"
+                                checked={pizzaBoyutu === "S"}
                                 onChange={handlePizzaBoyutChange}
                             />
                             Küçük
@@ -149,8 +149,8 @@ const OrderForm = (props) => {
                         <label>
                             <input
                                 type="radio"
-                                value="Orta"
-                                checked={pizzaBoyutu === "Orta"}
+                                value="M"
+                                checked={pizzaBoyutu === "M"}
                                 onChange={handlePizzaBoyutChange}
                             />
                             Orta
@@ -158,8 +158,8 @@ const OrderForm = (props) => {
                         <label>
                             <input
                                 type="radio"
-                                value="Büyük"
-                                checked={pizzaBoyutu === "Büyük"}
+                                value="L"
+                                checked={pizzaBoyutu === "L"}
                                 onChange={handlePizzaBoyutChange}
                             />
                             Büyük
