@@ -6,8 +6,10 @@ import { useHistory } from 'react-router-dom';
 
 const initialPrice = 85.50;
 
-export default function OrderForm() {
-    const [pizzaBoyutu, setPizzaBoyutu] = useState(""); // Pizza boyutunu tutucak.
+const OrderForm = (props) => {
+    const { setFormData } = props;
+
+    const [pizzaBoyutu, setPizzaBoyutu] = useState("");
     const [hamurKalınlıgı, setHamurKalınlıgı] = useState(""); // Hamur seçimi yapılacak.
     const [error, setError] = useState(""); //Hata mesajını tutucak.
     const [ekMalzemeler, setEkMalzemeler] = useState([]);
@@ -49,6 +51,7 @@ export default function OrderForm() {
         try {
             const response = await axios.post("https://reqres.in/api/pizza", siparisDetaylari);
             console.log("Sipariş Özeti:", response.data); // Gelen yanıtı console'a yaz
+            setFormData(siparisDetaylari);
             history.push("/confirmation");
 
         } catch (error) {
@@ -251,3 +254,6 @@ export default function OrderForm() {
         </>
     );
 };
+
+
+export default OrderForm;

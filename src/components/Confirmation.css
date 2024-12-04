@@ -1,4 +1,4 @@
-body.confirmation-bg {
+.confirmation-bg {
     background: #CE2829;
 }
 
@@ -6,22 +6,70 @@ body.confirmation-bg {
     display: flex;
     flex-direction: column;
     align-items: center;
-    row-gap: 10rem;
+    row-gap: .5rem;
 }
 
-.confirmation-logo {
-    margin-top: 15rem;
-}
 
 .conf h1 {
+    color: white;
+    font-size: 3.12rem;
+    font-weight: 400;
+    font-family: "Londrina Solid", sans-serif;
+    width: 22.68rem;
+    text-align: center;
+    margin: 0;
+    padding-top: 2.5rem;
+}
+
+.conf h3 {
+    color: #fdc913;
+    font-size: 2rem;
+    font-weight: 400;
+    font-family: "Satisfy", sans-serif;
+    width: 20.25rem;
+    text-align: center;
+    margin: 0;
+    padding-top: 2.5rem;
+}
+
+.conf p {
     color: white;
     font-size: 5.37rem;
     font-weight: 300;
     font-family: "Roboto Condensed", sans-serif;
-    width: 50rem;
+    width: 36.68rem;
     text-align: center;
-
+    margin: 0;
+    padding-bottom: 2.5rem;
 }
+
+.conf-section-divider {
+    width: 32.5rem;
+    color: #faf7f2;
+}
+
+.conf h4 {
+    color: white;
+    font-size: 1.37rem;
+    font-weight: 600;
+    font-family: "Barlow", sans-serif;
+    width: 29.75rem;
+    text-align: center;
+    margin: 0;
+    padding-top: 1.5rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 @media (max-width: 540px) {
     body.confirmation-bg {
