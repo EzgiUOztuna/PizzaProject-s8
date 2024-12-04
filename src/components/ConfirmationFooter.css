@@ -1,0 +1,188 @@
+/* FOOTER */
+
+.footer {
+    border: 1px solid black;
+    background-color: #1A1A1A;
+    border-bottom: white;
+    width: 100%;
+    height: auto;
+    padding-bottom: 1rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+
+}
+
+.footer-first-col {
+    display: flex;
+    flex-direction: column;
+    width: 19.12rem;
+    margin-left: 5rem;
+}
+
+.footer h1 {
+    font-family: "Londrina Solid", sans-serif;
+    font-weight: 400;
+    font-size: 3.12rem;
+    width: 15.68rem;
+    margin-bottom: 2rem;
+    text-align: left;
+
+}
+
+.location {
+    display: flex;
+    gap: 1rem;
+
+}
+
+.location img {
+    width: 1.75rem;
+    height: 1.75rem;
+
+}
+
+.location p {
+    font-family: "Barlow", sans-serif;
+    font-weight: 400;
+    font-size: 1.12rem;
+    width: 14.89rem;
+    text-align: left;
+    line-height: 1.8rem;
+}
+
+.email {
+    display: flex;
+    gap: 1rem;
+
+}
+
+.email img {
+    width: 1.75rem;
+    height: 1.75rem;
+}
+
+.email p {
+    font-family: "Barlow", sans-serif;
+    font-weight: 400;
+    font-size: 1.12rem;
+    width: 14.89rem;
+    text-align: left;
+    line-height: 1.8rem;
+}
+
+
+.phone {
+    display: flex;
+    gap: 1rem;
+
+}
+
+.phone img {
+    width: 1.75rem;
+    height: 1.75rem;
+}
+
+.phone p {
+    font-family: "Barlow", sans-serif;
+    font-weight: 400;
+    font-size: 1.12rem;
+    width: 14.89rem;
+    text-align: left;
+    line-height: 1.8rem;
+}
+
+.footer-second-col {
+    width: 19.12rem;
+    margin-top: 4.9rem;
+}
+
+.footer-second-col h1 {
+    font-family: "Barlow", sans-serif;
+    font-weight: 500;
+    font-size: 1.5rem;
+    text-align: left;
+}
+
+.footer-second-col ul {
+    font-family: "Barlow", sans-serif;
+    font-weight: 400;
+    font-size: 1.12rem;
+    text-align: left;
+    color: white;
+    padding-left: 0;
+}
+
+
+.footer-third-col {
+    width: 20.5rem;
+    margin-top: 4.9rem;
+    margin-right: 5rem;
+
+}
+
+.instagram-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.instagram-grid img {
+    width: 6.56rem;
+    height: 6.56rem;
+}
+
+.footer-third-col h1 {
+    font-family: "Barlow", sans-serif;
+    font-weight: 500;
+    font-size: 1.5rem;
+    text-align: left;
+}
+
+.footer-two {
+    border: 1px solid black;
+    background-color: #1A1A1A;
+    border-top: white;
+    width: 100%;
+    height: auto;
+
+}
+
+
+.footer-section-divider {
+    order: 99;
+    /* Bu öğeyi alta taşır */
+    flex-basis: 100%;
+    /* Tüm satırı kaplar */
+    margin: 2rem 0 1rem 0;
+    color: rgba(255, 255, 255, 0.139);
+}
+
+
+.footer-last {
+    order: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+    /* Metin ve ikon arasında boşluk bırakır */
+    padding: 1rem 0;
+    width: 120rem;
+}
+
+.footer-last p {
+    font-family: "Barlow", sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    align-items: flex-start;
+    width: 20.75rem;
+}
+
+.footer-last img.twitter {
+    width: 1rem;
+    height: 1rem;
+}

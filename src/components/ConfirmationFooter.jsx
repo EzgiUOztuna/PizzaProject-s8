@@ -1,5 +1,5 @@
 import React from 'react';
-import "./Confirmation.css";
+import "./ConfirmationFooter.css";
 
 const ConfirmationFooter = () => {
 
@@ -48,7 +48,7 @@ const ConfirmationFooter = () => {
 
             <div className='footer-last'>
                 <p>© 2023 Teknolojik Yemekler. </p>
-                <img src="Assets/Iteration-2-aseets/footer/icons/Vector.png" className='twitter' />
+                <img src="Assets/Iteration-2-aseets/footer/insta/Twitter.svg" className='twitter' />
             </div>
         </div >
     )
