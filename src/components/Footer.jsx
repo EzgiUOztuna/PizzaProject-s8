@@ -1,7 +1,7 @@
 import React from 'react';
-import "./ConfirmationFooter.css";
+import "./Footer.css";
 
-const ConfirmationFooter = () => {
+const Footer = () => {
 
     return (
         <div className='footer'>
@@ -57,4 +57,4 @@ const ConfirmationFooter = () => {
 
 
 
-export default ConfirmationFooter;
+export default Footer;

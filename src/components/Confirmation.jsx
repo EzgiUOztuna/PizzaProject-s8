@@ -1,7 +1,7 @@
 import React from 'react';
 import "./Confirmation.css";
 import "../components/OrderForm.jsx";
-import ConfirmationFooter from './ConfirmationFooter.jsx';
+import Footer from './Footer.jsx';
 
 const Confirmation = (props) => {
     const { formData } = props;
@@ -44,7 +44,7 @@ const Confirmation = (props) => {
                     <p>{(formData.toplamFiyat * formData.siparisAdeti).toFixed(2)}₺</p>
                 </div>
             </div>
-            <ConfirmationFooter />
+            <Footer />
         </div >
 
     );

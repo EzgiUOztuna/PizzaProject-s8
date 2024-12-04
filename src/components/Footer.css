@@ -18,7 +18,7 @@
     display: flex;
     flex-direction: column;
     width: 19.12rem;
-    margin-left: 5rem;
+    margin-left: 10rem;
 }
 
 .footer h1 {
@@ -118,7 +118,7 @@
 .footer-third-col {
     width: 20.5rem;
     margin-top: 4.9rem;
-    margin-right: 5rem;
+    margin-right: 10rem;
 
 }
 
@@ -180,9 +180,11 @@
     text-align: left;
     align-items: flex-start;
     width: 20.75rem;
+    margin-left: 2.5rem;
 }
 
 .footer-last img.twitter {
     width: 1rem;
     height: 1rem;
+    margin-right: 2.5rem;
 }
