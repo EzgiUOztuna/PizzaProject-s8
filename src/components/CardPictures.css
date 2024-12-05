@@ -1,0 +1,199 @@
+.cards-and-pictures {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5rem;
+}
+
+/* TERMİNAL PİZZA */
+.terminal-pizza {
+    width: 20.91rem;
+    height: 26.18rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1rem;
+    border: 1px solid black;
+}
+
+
+.terminal-pizza img.ter-piz {
+    width: 16.91rem;
+    height: 16.56rem;
+}
+
+.terminal-pizza h2 {
+    width: 16.91rem;
+    font-family: "Barlow", sans-serif;
+    font-size: 1.37rem;
+    font-weight: 600;
+    color: #292929;
+}
+
+.subtitles-ter-piz {
+    width: 16.91rem;
+    height: 1.81rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.subtitles-ter-piz span {
+    font-family: "Barlow", sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #1b1b1b;
+}
+
+.subtitles-ter-piz p {
+    font-family: "Barlow", sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #292929;
+}
+
+.rating-pizza {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    font-size: 1rem;
+    width: 7.56rem;
+    color: #5F5F5F;
+}
+
+.rating-count-pizza {
+    font-size: 1rem;
+    color: #5F5F5F;
+    padding-left: 7rem;
+}
+
+/* ABSOLUTE PİZZA */
+
+.absolute-pizza {
+    width: 20.91rem;
+    height: 26.18rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1rem;
+    border: 1px solid black;
+}
+
+
+.absolute-pizza img.abs-piz {
+    width: 16.91rem;
+    height: 16.56rem;
+
+}
+
+.absolute-pizza h2 {
+    width: 16.91rem;
+    font-family: "Barlow", sans-serif;
+    font-size: 1.37rem;
+    font-weight: 600;
+    color: #292929;
+}
+
+.subtitles-abs-piz {
+    width: 16.91rem;
+    height: 1.81rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.subtitles-abs-piz span {
+    font-family: "Barlow", sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #1b1b1b;
+}
+
+.subtitles-abs-piz p {
+    font-family: "Barlow", sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #292929;
+}
+
+.rating-abs {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    font-size: 1rem;
+    width: 7.56rem;
+    color: #5F5F5F;
+}
+
+.rating-count-abs {
+    font-size: 1rem;
+    color: #5F5F5F;
+    padding-left: 7rem;
+}
+
+/* TAVUK BURGER */
+
+.tavuk-burger {
+    width: 20.91rem;
+    height: 26.18rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1rem;
+    border: 1px solid black;
+}
+
+
+.tavuk-burger img.tvk-brgr {
+    width: 16.91rem;
+    height: 16.56rem;
+
+}
+
+.tavuk-burger h2 {
+    width: 16.91rem;
+    font-family: "Barlow", sans-serif;
+    font-size: 1.37rem;
+    font-weight: 600;
+    color: #292929;
+}
+
+.subtitles-tvk-brgr {
+    width: 16.91rem;
+    height: 1.81rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.subtitles-tvk-brgr span {
+    font-family: "Barlow", sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #1b1b1b;
+}
+
+.subtitles-tvk-brgr p {
+    font-family: "Barlow", sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #292929;
+}
+
+.rating-brgr {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    font-size: 1rem;
+    width: 7.56rem;
+    color: #5F5F5F;
+}
+
+.rating-count-brgr {
+    font-size: 1rem;
+    color: #5F5F5F;
+    padding-left: 7rem;
+}
