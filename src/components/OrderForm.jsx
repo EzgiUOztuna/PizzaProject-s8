@@ -141,15 +141,16 @@ const OrderForm = (props) => {
             {/* 📌 MAIN - BOYUT SEÇME */}
             <form onSubmit={handleSubmit}>
                 <div className='boyut-hamur' >
+
                     <div className='boyut-secim'>
                         <h2>Boyut Seç <span style={{ color: "red" }}>*</span></h2>
-                        <label >
+                        <label className='small'>
                             <input
                                 type="radio"
                                 value="S"
                                 checked={pizzaBoyutu === "S"}
                                 onChange={handlePizzaBoyutChange}
-                            /> S
+                            /> <span>S</span>
                         </label>
                         <label>
                             <input
@@ -158,7 +159,7 @@ const OrderForm = (props) => {
                                 checked={pizzaBoyutu === "M"}
                                 onChange={handlePizzaBoyutChange}
                             />
-                            M
+                            <span>M</span>
                         </label>
                         <label>
                             <input
@@ -167,7 +168,7 @@ const OrderForm = (props) => {
                                 checked={pizzaBoyutu === "L"}
                                 onChange={handlePizzaBoyutChange}
                             />
-                            L
+                            <span>L</span>
                         </label>
                     </div>
 
