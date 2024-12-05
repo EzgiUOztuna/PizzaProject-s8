@@ -11,42 +11,59 @@ html {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 10rem;
+    height: 8.62rem;
     background-color: #CE2829;
-    color: white;
-    gap: 0;
+    position: relative;
+    z-index: 1;
 }
 
 .logo {
     width: 23rem;
     height: 2.86rem;
-    padding-top: 2rem;
+}
+
+.new-container {
+    position: relative;
+    z-index: 0;
+    background-color: #faf7f2;
+}
+
+.new-banner {
+    position: relative;
+    transform: translateY(-70px);
+    z-index: -1;
+    max-width: 36.31rem;
+    display: block;
+    margin: 0 auto;
 
 }
 
 .links-container {
-    display: flex;
-    justify-content: center;
-    margin-right: 21.6rem;
-    gap: 1rem;
-    max-width: 34rem;
+    max-width: 33.25rem;
+    font-size: 1.40rem;
+    margin: 0 auto;
+    padding: 0;
+    font-family: 'Barlow', sans-serif;
+    font-weight: 500;
+    color: #292929;
+
 }
+
 
 .links-container a {
     text-decoration: none;
-    color: white;
+    color: black;
     font-size: 1rem;
     font-family: 'Barlow', sans-serif;
-    gap: 1rem;
     margin-top: 2rem;
     margin-bottom: 1rem;
+    padding-right: 1rem;
 }
 
 .links-container a:hover {
     text-decoration: underline;
     color: darkred;
 }
-
 
 /* Main */
 .titleOne {
@@ -97,6 +114,7 @@ html {
     max-width: 33.25rem;
     margin: 2rem auto;
     line-height: 1.8rem;
+    padding-bottom: 3rem;
 }
 
 
@@ -116,11 +134,12 @@ form {
     justify-content: space-between;
     /* Space between boyut and hamur */
     gap: 1rem;
+    max-width: 33.25rem;
 
 }
 
 .boyut-secim {
-    max-width: 9.18rem;
+    max-width: 13.43rem;
 }
 
 .boyut-secim h2 {
@@ -131,24 +150,40 @@ form {
 }
 
 .boyut-secim label {
-    display: flex;
-    margin: 0.5em 0;
     font-family: 'Barlow', sans-serif;
-    line-height: 1.87rem;
 }
 
 input {
-    max-width: 6.31rem;
+    border: 1px solid black;
+    border-radius: 2rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    border: none;
+    color: #5F5F5F;
+    background-color: #faf7f2;
+    margin-right: .5rem;
 }
 
+input:hover {
+    background-color: #ffeecc;
+}
+
+
 .hamur-secim {
-    max-width: 9.93rem;
+    max-width: 16.12rem;
     font-family: 'Barlow', sans-serif;
-    margin-right: 10rem;
+
 }
 
 select {
-    max-width: 9.87rem;
+    width: 16.12rem;
+    height: 3.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    color: #5F5F5F;
+    background-color: #faf7f2;
+    border-radius: .5rem;
+    border: none;
 }
 
 .hamur-secim h2 {
@@ -168,6 +203,7 @@ select {
     gap: 1rem;
     /* Sütunlar arasındaki boşluk */
     margin-top: 1rem;
+    position: relative;
 }
 
 .ek-malzemeler h2 {
@@ -197,10 +233,40 @@ select {
     font-weight: bold;
     color: #5F5F5F;
     gap: 0.8rem;
+    align-items: center;
 }
 
 .ek-malzemeler input {
-    margin: 0;
+    appearance: none;
+    -webkit-appearance: none;
+    width: 2.81rem;
+    height: 2.81rem;
+    cursor: pointer;
+    border: 1px solid #faf7f2;
+    background-color: #faf7f2;
+    border-radius: .5rem;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    position: relative;
+}
+
+.ek-malzemeler input:hover {
+    background-color: #FDC913;
+}
+
+.ek-malzemeler input:checked {
+    background-color: #FDC913;
+    border-color: #FDC913;
+}
+
+.ek-malzemeler input:checked::before {
+    content: "✔";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #5F5F5F;
+    font-size: 1.5rem;
+    font-weight: bold;
 }
 
 .siparis-notu {
@@ -227,6 +293,8 @@ select {
     font-family: 'Barlow', sans-serif;
     resize: none;
     /* Kullanıcı boyutunu değiştiremesin */
+    background-color: #faf7f2;
+    border: none;
 }
 
 .section-divider {
@@ -302,6 +370,7 @@ select {
     border-radius: 0.5rem;
     line-height: 0.25rem;
     margin-bottom: 0;
+    background-color: #faf7f2;
 
 }
 
@@ -370,7 +439,7 @@ select {
     /* Buton içeriğini dikeyde ortala */
     cursor: pointer;
     /* İmleç değişimi */
-    margin-bottom: 2.5rem;
+    margin-bottom: 5rem;
     margin-left: auto;
 }
 

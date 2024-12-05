@@ -313,62 +313,39 @@
 }
 
 
-
-
-/* Responsive Media Queries */
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
     .home-logo {
         width: 15rem;
-        top: 15%;
-        /* Logonun üstten konumunu biraz düşürdük */
+        /* Adjust logo size */
+        top: 2rem;
+        /* Adjust logo position */
+        margin-bottom: 1.5rem;
+        /* Adjust margin */
     }
 
     .paragraf-home {
-        font-size: 2rem;
-        /* Yazı boyutu küçültüldü */
+        font-size: 3rem;
+        /* Smaller font size */
         width: 90%;
-        /* Daha küçük ekranlarda daha fazla sığması için genişlik ayarlandı */
-        top: 35%;
-        /* Yazının yerleşimi aşağı çekildi */
-        line-height: 1.5;
-        /* Daha iyi okunabilirlik için satır yüksekliği */
+        /* Adjust width */
+        top: 4rem;
+        /* Adjust position */
+        font-size: 4rem;
     }
 
     .button-home {
-        top: 60%;
-        /* Butonun konumu mobilde optimize edildi */
         width: 10rem;
-        /* Buton genişliği biraz küçültüldü */
-        font-size: 1rem;
-        /* Yazı boyutu ayarlandı */
-    }
-}
-
-@media (max-width: 480px) {
-    .home-logo {
-        width: 12rem;
-        /* Daha küçük ekranlarda logonun boyutu küçültüldü */
-        top: 10%;
-        /* Üst boşluk ayarlandı */
-    }
-
-    .paragraf-home {
-        font-size: 1.5rem;
-        /* Çok küçük cihazlar için yazı boyutu daha da küçültüldü */
-        width: 80%;
-        /* Daha dar genişlik */
-        top: 30%;
-        /* Daha iyi yerleşim için yukarı kaydırıldı */
-    }
-
-    .button-home {
-        top: 50%;
-        /* Butonun pozisyonu daha yukarı taşındı */
-        width: 8rem;
-        /* Buton genişliği küçültüldü */
-        font-size: 0.9rem;
-        /* Yazı boyutu küçültüldü */
+        /* Adjust button width */
         height: 3rem;
-        /* Buton yüksekliği ayarlandı */
+        /* Adjust button height */
+        top: 20rem;
+        /* Adjust button position */
+    }
+
+    .firsat {
+        top: 5rem;
+        /* Adjust position */
+        font-size: 1.5rem;
+        /* Adjust font size */
     }
 }

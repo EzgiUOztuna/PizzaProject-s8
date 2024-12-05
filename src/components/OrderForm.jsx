@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import "./OrderForm.css";
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
+import Footer from './Footer.jsx';
 
 const initialPrice = 85.50;
 
@@ -107,44 +108,48 @@ const OrderForm = (props) => {
             {/* 📌 HEADER */}
             <div className='header-container'>
                 <img src="/Assets/Iteration-1-assets/logo.svg" alt="Logo" className="logo" />
+            </div >
+
+            <div className='new-container' >
+                <img src="Assets/Iteration-2-aseets/pictures/form-banner.png" className="new-banner" />
 
                 <div className='links-container'>
                     <Link to="/">
                         Anasayfa
                     </Link>
-                    <Link to="/" style={{ fontWeight: 700, minWidth: '105px' }}>
+                    <Link to="/order" style={{ fontWeight: 500, minWidth: '105px', color: "#ce2829" }}>
                         Sipariş Oluştur
                     </Link>
                 </div>
-            </div >
 
-            {/* 📌 MAIN - BAŞLIK / PRICE / RATING'LER */}
-            <p className='titleOne' > Position Absolute Acı Pizza</p>
-            <div className="price-rating-container">
-                <span className="price">{initialPrice}₺</span>
-                <span className="rating">4.9
-                    <span className="rating-count">(200)</span>
-                </span>
+                {/* 📌 MAIN - BAŞLIK / PRICE / RATING'LER */}
+                <p className='titleOne' > Position Absolute Acı Pizza</p>
+
+                <div className="price-rating-container">
+                    <span className="price">{initialPrice}₺</span>
+                    <span className="rating">4.9
+                        <span className="rating-count">(200)</span>
+                    </span>
+                </div>
+
+                {/* 📌 MAIN - PARAGRAF */}
+                <p className='desc'>
+                    Frontent Dev olarak hala position:absolute kullanıyorsan bu çok acı pizza tam sana göre. Pizza, domates, peynir ve genellikle çeşitli diğer malzemelerle kaplanmış, daha sonra geleneksel olarak odun ateşinde bir fırında yüksek sıcaklıkta pişirilen, genellikle yuvarlak, düzleştirilmiş mayalı buğday bazlı hamurdan oluşan İtalyan kökenli lezzetli bir yemektir. . Küçük bir pizzaya bazen pizzetta denir.
+                </p>
             </div>
-
-            {/* 📌 MAIN - PARAGRAF */}
-            <p className='desc'>
-                Frontent Dev olarak hala position:absolute kullanıyorsan bu çok acı pizza tam sana göre. Pizza, domates, peynir ve genellikle çeşitli diğer malzemelerle kaplanmış, daha sonra geleneksel olarak odun ateşinde bir fırında yüksek sıcaklıkta pişirilen, genellikle yuvarlak, düzleştirilmiş mayalı buğday bazlı hamurdan oluşan İtalyan kökenli lezzetli bir yemektir. . Küçük bir pizzaya bazen pizzetta denir.
-            </p>
 
             {/* 📌 MAIN - BOYUT SEÇME */}
             <form onSubmit={handleSubmit}>
                 <div className='boyut-hamur' >
                     <div className='boyut-secim'>
                         <h2>Boyut Seç <span style={{ color: "red" }}>*</span></h2>
-                        <label>
+                        <label >
                             <input
                                 type="radio"
                                 value="S"
                                 checked={pizzaBoyutu === "S"}
                                 onChange={handlePizzaBoyutChange}
-                            />
-                            Küçük
+                            /> S
                         </label>
                         <label>
                             <input
@@ -153,7 +158,7 @@ const OrderForm = (props) => {
                                 checked={pizzaBoyutu === "M"}
                                 onChange={handlePizzaBoyutChange}
                             />
-                            Orta
+                            M
                         </label>
                         <label>
                             <input
@@ -162,7 +167,7 @@ const OrderForm = (props) => {
                                 checked={pizzaBoyutu === "L"}
                                 onChange={handlePizzaBoyutChange}
                             />
-                            Büyük
+                            L
                         </label>
                     </div>
 
@@ -173,7 +178,7 @@ const OrderForm = (props) => {
                             value={hamurKalınlıgı}
                             onChange={handleHamurKalınlıgıChange}
                         >
-                            <option value="">Hamur Kalınlığı</option>
+                            <option value="">-Hamur Kalınlığı Seç-</option>
                             <option value="İnce">İnce</option>
                             <option value="Orta">Orta</option>
                             <option value="Kalın">Kalın</option>
@@ -250,6 +255,8 @@ const OrderForm = (props) => {
                     SİPARİŞ VER
                 </button>
             </form >
+
+            <Footer />
 
         </>
     );
