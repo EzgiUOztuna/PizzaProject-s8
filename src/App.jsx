@@ -12,7 +12,7 @@ export default function App() {
     <Router>
       <Switch>
         <Route exact path="/">
-          <Home />
+          <Home setFormData={setFormData} />
         </Route>
         <Route path="/order">
           <OrderForm setFormData={setFormData} />

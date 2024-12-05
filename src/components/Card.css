@@ -1,0 +1,138 @@
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: .5rem;
+    margin-bottom: 3rem;
+}
+
+
+.first-col {
+    position: relative;
+}
+
+.first-col img.first-col-img {
+    width: 33.18rem;
+    height: 28.06rem;
+}
+
+.first-col h1 {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    font-family: "Quattrocento", sans-serif;
+    font-size: 4.25rem;
+    font-weight: 700;
+    width: 18rem;
+    color: white;
+    padding-top: 0;
+    margin-top: 0;
+}
+
+.first-col p {
+    position: absolute;
+    top: 11rem;
+    /* h1'in altına doğru konumlanır */
+    left: 2rem;
+    /* h1 ile hizalı olur */
+    font-size: 1.25rem;
+    font-weight: 600;
+    width: 18rem;
+    color: white;
+}
+
+.first-col button {
+    position: absolute;
+    top: 15rem;
+    left: 2rem;
+    border-radius: 2rem;
+    width: 8.62rem;
+    height: 3rem;
+    border: none;
+    color: #ce2829;
+    cursor: pointer;
+}
+
+
+
+.sec-col {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    width: 33.18rem;
+    height: 28.06rem;
+    gap: .3rem;
+    position: relative;
+}
+
+.sec-col-one {
+    position: relative;
+    height: auto;
+    width: 33.12rem;
+}
+
+.sec-col-one img {
+    height: 13.75rem;
+}
+
+.sec-col-one h1 {
+    position: absolute;
+    font-family: "Barlow", sans-serif;
+    font-size: 2rem;
+    font-weight: 600;
+    width: 11.40rem;
+    color: white;
+    top: .7rem;
+    left: 2rem;
+
+
+}
+
+.sec-col-one button {
+    position: absolute;
+    top: 8.5rem;
+    left: 2rem;
+    border-radius: 2rem;
+    width: 8.62rem;
+    height: 3rem;
+    border: none;
+    color: #ce2829;
+    background-color: white;
+    cursor: pointer;
+}
+
+
+
+.sec-col-two {
+    position: relative;
+    height: auto;
+    width: 33.12rem;
+}
+
+.sec-col-two img {
+    height: 13.75rem;
+}
+
+.sec-col-two h1 {
+    position: absolute;
+    font-family: "Barlow", sans-serif;
+    font-size: 2rem;
+    font-weight: 600;
+    width: 13rem;
+    height: 5.5rem;
+    color: #292929;
+    top: .7rem;
+    left: 2rem;
+
+}
+
+.sec-col-two button {
+    position: absolute;
+    top: 8.5rem;
+    left: 2rem;
+    border-radius: 2rem;
+    width: 8.62rem;
+    height: 3rem;
+    border: none;
+    color: #ce2829;
+    background-color: white;
+    cursor: pointer;
+}

@@ -56,6 +56,213 @@
     font-family: 'Barlow', sans-serif;
 }
 
+
+.secenekler {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+}
+
+.secenekler div {
+    display: flex;
+
+}
+
+.kore {
+    gap: 1rem;
+}
+
+.pizza {
+    gap: 1rem;
+}
+
+.burger {
+    gap: 1rem;
+}
+
+.kızartma {
+    gap: 1rem;
+}
+
+.fastfood {
+    gap: 1rem;
+}
+
+.icecek {
+    gap: 1rem;
+}
+
+
+.paket {
+    text-align: center;
+    font-family: "satisfy", sans-serif;
+    font-size: 2rem;
+    color: #ce2829;
+    font-weight: 400;
+}
+
+.baslik-bir {
+    text-align: center;
+    font-family: "barlow", sans-serif;
+    font-size: 2.62rem;
+    color: #292929;
+    font-weight: 600;
+    padding-top: 0;
+    margin-top: 0;
+}
+
+
+.secenekler-eng {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+}
+
+.secenekler-eng div {
+    display: flex;
+}
+
+.ramen {
+    gap: 1rem;
+    border: 1px solid white;
+    border-radius: 2rem;
+    width: 8rem;
+    padding-left: 1rem;
+}
+
+.ramen img {
+    width: 2.62rem;
+    height: 2.62rem;
+    padding: 0;
+    margin: 0;
+}
+
+.ramen p {
+    width: 2.62rem;
+    height: 2.62rem;
+    padding: .5rem 0 0 0;
+    margin: 0;
+    height: 1.93rem;
+}
+
+
+
+.pizza-eng {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    border: 1px solid white;
+    background-color: #292929;
+    border-radius: 2rem;
+    width: 8.37rem;
+    height: 4.12rem;
+}
+
+.pizza-eng img {
+    width: 2.62rem;
+    height: 2.62rem;
+    padding: 0;
+    margin: 0;
+}
+
+.pizza-eng p {
+    width: 2.62rem;
+    height: 2.62rem;
+    padding: .5rem 0 0 0;
+    margin: 0;
+    color: white;
+    height: 1.93rem;
+}
+
+
+.burger-eng {
+    gap: 1rem;
+}
+
+.burger-eng img {
+    width: 2.62rem;
+    height: 2.62rem;
+    padding: 0;
+    margin: 0;
+}
+
+.burger-eng p {
+    width: 2.62rem;
+    height: 2.62rem;
+    padding: .5rem 0 0 0;
+    margin: 0;
+    height: 1.93rem;
+}
+
+
+.frenchfries {
+    gap: 1rem;
+}
+
+.frenchfries img {
+    width: 2.62rem;
+    height: 2.62rem;
+    padding: 0;
+    margin: 0;
+}
+
+.frenchfries p {
+    width: 5.5rem;
+    height: 2.62rem;
+    padding: .5rem 0 0 0;
+    margin: 0;
+    height: 1.93rem;
+}
+
+
+.fastfood-eng {
+    gap: 1rem;
+}
+
+.fastfood-eng img {
+    width: 2.62rem;
+    height: 2.62rem;
+    padding: 0;
+    margin: 0;
+}
+
+.fastfood-eng p {
+    width: 4.1rem;
+    height: 2.62rem;
+    padding: .5rem 0 0 0;
+    margin: 0;
+    height: 1.93rem;
+}
+
+.softdrinks {
+    gap: 1rem;
+}
+
+.softdrinks img {
+    width: 2.62rem;
+    height: 2.62rem;
+    padding: 0;
+    margin: 0;
+}
+
+.softdrinks p {
+    width: 4.8rem;
+    height: 2.62rem;
+    padding: .5rem 0 0 0;
+    margin: 0;
+    height: 1.93rem;
+}
+
+
+
+
 /* Responsive Media Queries */
 @media (max-width: 768px) {
     .home-logo {
