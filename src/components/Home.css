@@ -10,23 +10,34 @@
 /* Logo */
 .home-logo {
     position: absolute;
-    top: 10%;
-    /* Üstten %20 mesafe */
+    top: 3rem;
     left: 50%;
-    /* Yatayda ortalamak için */
     transform: translateX(-50%);
-    /* Yatayda tam ortalama */
     width: 22.62rem;
-    /* Logonun genişliği */
-    height: auto;
-    /* Yükseklik orantılı */
     margin-bottom: 3rem;
+}
+
+.new-image {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.firsat {
+    position: absolute;
+    top: 7rem;
+    font-family: "satisfy", sans-serif;
+    font-size: 2rem;
+    color: #FDC913;
+    font-weight: 400;
 }
 
 /* Yazı */
 .paragraf-home {
     position: absolute;
-    top: 10%;
+    top: 5rem;
     left: 50%;
     transform: translateX(-50%);
     font-size: 5.37rem;
@@ -41,7 +52,7 @@
 /* Buton */
 .button-home {
     position: absolute;
-    top: 45%;
+    top: 26rem;
     left: 50%;
     transform: translateX(-50%);
     background-color: #FDC913;
@@ -95,6 +106,9 @@
     gap: 1rem;
 }
 
+.for-background-color {
+    background-color: #f5f5f5;
+}
 
 .paket {
     text-align: center;
@@ -102,6 +116,8 @@
     font-size: 2rem;
     color: #ce2829;
     font-weight: 400;
+    padding-top: 0;
+    margin-top: 0;
 }
 
 .baslik-bir {
@@ -110,8 +126,8 @@
     font-size: 2.62rem;
     color: #292929;
     font-weight: 600;
-    padding-top: 0;
-    margin-top: 0;
+    padding-bottom: 1rem;
+
 }
 
 
@@ -119,7 +135,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 4rem;
+    gap: 1.5rem;
     margin-bottom: 2rem;
     margin-top: 1rem;
 }
@@ -129,11 +145,15 @@
 }
 
 .ramen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     gap: 1rem;
     border: 1px solid white;
+    background-color: white;
     border-radius: 2rem;
-    width: 8rem;
-    padding-left: 1rem;
+    width: 9.17rem;
+    height: 4.12rem;
 }
 
 .ramen img {
@@ -183,7 +203,15 @@
 
 
 .burger-eng {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     gap: 1rem;
+    border: 1px solid white;
+    background-color: white;
+    border-radius: 2rem;
+    width: 9.08rem;
+    height: 4.12rem;
 }
 
 .burger-eng img {
@@ -203,7 +231,15 @@
 
 
 .frenchfries {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     gap: 1rem;
+    border: 1px solid white;
+    background-color: white;
+    border-radius: 2rem;
+    width: 11.67rem;
+    height: 4.12rem;
 }
 
 .frenchfries img {
@@ -223,7 +259,15 @@
 
 
 .fastfood-eng {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     gap: 1rem;
+    border: 1px solid white;
+    background-color: white;
+    border-radius: 2rem;
+    width: 10.36rem;
+    height: 4.12rem;
 }
 
 .fastfood-eng img {
@@ -242,7 +286,15 @@
 }
 
 .softdrinks {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     gap: 1rem;
+    border: 1px solid white;
+    background-color: white;
+    border-radius: 2rem;
+    width: 11.14rem;
+    height: 4.12rem;
 }
 
 .softdrinks img {

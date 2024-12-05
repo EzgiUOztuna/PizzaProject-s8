@@ -19,6 +19,7 @@
     flex-direction: column;
     width: 19.12rem;
     margin-left: 10rem;
+    gap: 1rem;
 }
 
 .footer h1 {
@@ -28,12 +29,15 @@
     width: 15.68rem;
     margin-bottom: 2rem;
     text-align: left;
+    color: white;
 
 }
 
 .location {
     display: flex;
+    align-items: center;
     gap: 1rem;
+    color: white;
 
 }
 
@@ -50,11 +54,15 @@
     width: 14.89rem;
     text-align: left;
     line-height: 1.8rem;
+    padding-bottom: 0;
 }
 
 .email {
     display: flex;
     gap: 1rem;
+    align-items: center;
+    color: white;
+
 
 }
 
@@ -70,13 +78,15 @@
     width: 14.89rem;
     text-align: left;
     line-height: 1.8rem;
+    padding-bottom: 0;
 }
 
 
 .phone {
     display: flex;
     gap: 1rem;
-
+    align-items: center;
+    color: white;
 }
 
 .phone img {
@@ -91,6 +101,7 @@
     width: 14.89rem;
     text-align: left;
     line-height: 1.8rem;
+    padding-bottom: 0;
 }
 
 .footer-second-col {
@@ -146,7 +157,6 @@
     border-top: white;
     width: 100%;
     height: auto;
-
 }
 
 
@@ -169,6 +179,7 @@
     /* Metin ve ikon arasında boşluk bırakır */
     padding: 1rem 0;
     width: 120rem;
+    color: white;
 }
 
 .footer-last p {
