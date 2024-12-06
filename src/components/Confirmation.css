@@ -1,12 +1,9 @@
-.confirmation-bg {
-    background-color: #CE2829;
-}
-
 .conf {
     display: flex;
     flex-direction: column;
     align-items: center;
     row-gap: .5rem;
+    background-color: #CE2829;
 }
 
 
