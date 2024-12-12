@@ -1,0 +1,37 @@
+.secenekler {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+}
+
+.secenekler div {
+    display: flex;
+
+}
+
+.kore {
+    gap: 1rem;
+}
+
+.pizza {
+    gap: 1rem;
+}
+
+.burger {
+    gap: 1rem;
+}
+
+.kızartma {
+    gap: 1rem;
+}
+
+.fastfood {
+    gap: 1rem;
+}
+
+.icecek {
+    gap: 1rem;
+}

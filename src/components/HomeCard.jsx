@@ -1,7 +1,7 @@
 import React from "react";
-import "./Card.css"
+import "./HomeCard.css"
 import { Link } from 'react-router-dom';
-const Card = () => {
+const HomeCard = () => {
 
     return (
         <div className="cards">
@@ -39,4 +39,4 @@ const Card = () => {
 
 }
 
-export default Card;
+export default HomeCard;

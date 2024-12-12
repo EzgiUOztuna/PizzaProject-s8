@@ -1,7 +1,7 @@
 import React from 'react';
-import "./CardPictures.css"
+import "./HomeCardPictures.css"
 
-const CardPictures = () => {
+const HomeCardPictures = () => {
     return (
         <div className='cards-and-pictures'>
 
@@ -49,4 +49,4 @@ const CardPictures = () => {
 
 }
 
-export default CardPictures;
+export default HomeCardPictures;
