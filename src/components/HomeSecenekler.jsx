@@ -1,41 +1,27 @@
 import React from 'react';
 import "./HomeSecenekler.css";
 
+const secenekler = [
+    { icon: 'Assets/Iteration-2-aseets/icons/1.svg', label: 'YENİ! Kore' },
+    { icon: 'Assets/Iteration-2-aseets/icons/2.svg', label: 'Pizza' },
+    { icon: 'Assets/Iteration-2-aseets/icons/3.svg', label: 'Burger' },
+    { icon: 'Assets/Iteration-2-aseets/icons/4.svg', label: 'Kızartmalar' },
+    { icon: 'Assets/Iteration-2-aseets/icons/5.svg', label: 'Fast food' },
+    { icon: 'Assets/Iteration-2-aseets/icons/6.svg', label: 'Gazlı İçecek' },
+];
 
 const HomeSecenekler = () => {
 
     return (
         <div className='secenekler'>
-
-            <div className='kore'>
-                <img src='Assets/Iteration-2-aseets/icons/1.svg' />
-                <p>YENİ! Kore</p>
-            </div>
-
-            <div className='pizza'>
-                <img src='Assets/Iteration-2-aseets/icons/2.svg' />
-                <p>Pizza</p>
-            </div>
-
-            <div className='burger'>
-                <img src='Assets/Iteration-2-aseets/icons/3.svg' />
-                <p>Burger</p>
-            </div>
-
-            <div className='kızartma'>
-                <img src='Assets/Iteration-2-aseets/icons/4.svg' />
-                <p>Kızartmalar</p>
-            </div>
-
-            <div className='fastfood'>
-                <img src='Assets/Iteration-2-aseets/icons/5.svg' />
-                <p>Fast food</p>
-            </div>
-
-            <div className='icecek'>
-                <img src='Assets/Iteration-2-aseets/icons/6.svg' />
-                <p>Gazlı İçecek</p>
-            </div>
+            {secenekler.map((secenek, index) => {
+                return (
+                    <div className={secenek.label.toLocaleLowerCase()} key={index}>
+                        <img src={secenek.icon} alt='secenek.label' />
+                        <p>{secenek.label}</p>
+                    </div>
+                );
+            })}
         </div>
     )
 

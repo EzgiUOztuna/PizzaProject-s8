@@ -4,6 +4,7 @@ import "./OrderForm.css";
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
 import Footer from './Footer.jsx';
+import MenuDetails from './OrderFormMenuDetails.jsx';
 
 const initialPrice = 85.50;
 
@@ -30,12 +31,10 @@ const OrderForm = (props) => {
             setError("Lütfen pizza boyutunu seçiniz!");
             return;
         }
-
         if (!hamurKalınlıgı) {
             setError("Lütfen hamur kalınlığını seçiniz!");
             return;
         }
-
         if (ekMalzemeler.length < 4) {
             setMalzemeHatasi("En az 4 malzeme seçmelisiniz.");
             return;
@@ -49,17 +48,17 @@ const OrderForm = (props) => {
         };
 
         /* 📌 API'ye POST isteği gönder */
-        try {
-            const response = await axios.post("https://reqres.in/api/pizza", siparisDetaylari);
-            console.log("Sipariş Özeti:", response.data); // Gelen yanıtı console'a yaz
-            setFormData(siparisDetaylari);
-            history.push("/confirmation");
-
-        } catch (error) {
-            console.error("Sipariş oluşturulurken bir hata oluştu:", error);
-            alert("Bir hata oluştu, lütfen tekrar deneyin.");
-        }
+        axios.post("https://reqres.in/api/pizza", siparisDetaylari)
+            .then((response) => {
+                console.log("Sipariş Özeti:", response.data); // Gelen yanıtı console'a yaz
+                setFormData(siparisDetaylari);
+                history.push("/confirmation");
+            })
+            .catch((error) => {
+                console.error("Sipariş oluşturulurken bir hata oluştu:", error);
+            })
     };
+
 
     /* 📌 HANDLE DECREASE - (-) BUTONU İÇİN */
     const handleDecrease = (e) => {
@@ -74,8 +73,20 @@ const OrderForm = (props) => {
     }
 
     /* 📌 HANDLE CHANGE'LER */
-    const handlePizzaBoyutChange = (e) => setPizzaBoyutu(e.target.value);
-    const handleHamurKalınlıgıChange = (e) => setHamurKalınlıgı(e.target.value);
+    const handlePizzaBoyutChange = (yeniBoyut) => {
+        if (yeniBoyut) {
+            setError(""); // Hata mesajını sıfırlayın
+        }
+        setPizzaBoyutu(yeniBoyut.target.value);
+    }
+
+    const handleHamurKalınlıgıChange = (yeniHamurKalınlıgı) => {
+        if (yeniHamurKalınlıgı) {
+            setError(""); // Hata mesajını sıfırlayın
+        }
+        setHamurKalınlıgı(yeniHamurKalınlıgı.target.value);
+    }
+
     const handleMalzemeChange = (e) => {
         const { value, checked } = e.target;
         let updatedMalzemeler = [...ekMalzemeler];
@@ -102,10 +113,9 @@ const OrderForm = (props) => {
 
     }
 
-    /* 📌📌 RETURN */
     return (
         <>
-            {/* 📌 HEADER */}
+            {/* 📌 RED-HEADER */}
             <div className='header-container'>
                 <img src="/Assets/Iteration-1-assets/logo.svg" alt="Logo" className="logo" />
             </div >
@@ -121,21 +131,7 @@ const OrderForm = (props) => {
                         Sipariş Oluştur
                     </Link>
                 </div>
-
-                {/* 📌 MAIN - BAŞLIK / PRICE / RATING'LER */}
-                <p className='titleOne' > Position Absolute Acı Pizza</p>
-
-                <div className="price-rating-container">
-                    <span className="price">{initialPrice}₺</span>
-                    <span className="rating">4.9
-                        <span className="rating-count">(200)</span>
-                    </span>
-                </div>
-
-                {/* 📌 MAIN - PARAGRAF */}
-                <p className='desc'>
-                    Frontent Dev olarak hala position:absolute kullanıyorsan bu çok acı pizza tam sana göre. Pizza, domates, peynir ve genellikle çeşitli diğer malzemelerle kaplanmış, daha sonra geleneksel olarak odun ateşinde bir fırında yüksek sıcaklıkta pişirilen, genellikle yuvarlak, düzleştirilmiş mayalı buğday bazlı hamurdan oluşan İtalyan kökenli lezzetli bir yemektir. . Küçük bir pizzaya bazen pizzetta denir.
-                </p>
+                <MenuDetails />
             </div>
 
             {/* 📌 MAIN - BOYUT SEÇME */}
@@ -172,6 +168,7 @@ const OrderForm = (props) => {
                         </label>
                     </div>
 
+
                     {/* 📌 MAIN - HAMUR KALINLIĞI SEÇME */}
                     <div className='hamur-secim'>
                         <h2>Hamur Seç<span style={{ color: "red" }}>*</span></h2>
@@ -184,9 +181,11 @@ const OrderForm = (props) => {
                             <option value="Orta">Orta</option>
                             <option value="Kalın">Kalın</option>
                         </select>
+
                     </div>
                 </div>
                 {error && <p style={{ color: "red" }}>{error}</p>}
+
 
                 {/* 📌 MAIN - EK MALZEMELERİ SEÇME */}
                 <div className='ek-malzemeler'>
