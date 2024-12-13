@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import "./OrderForm.css";
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
@@ -10,6 +10,9 @@ const initialPrice = 85.50;
 
 const OrderForm = (props) => {
     const { setFormData } = props;
+
+    const pizzaBoyutuRef = useRef(null); //scroll özelliği için.
+    const hamurKalınlıgıRef = useRef(null);
 
     const [pizzaBoyutu, setPizzaBoyutu] = useState("");
     const [hamurKalınlıgı, setHamurKalınlıgı] = useState(""); // Hamur seçimi yapılacak.
@@ -29,10 +32,12 @@ const OrderForm = (props) => {
 
         if (!pizzaBoyutu) {
             setError("Lütfen pizza boyutunu seçiniz!");
+            pizzaBoyutuRef.current.scrollIntoView({ behavior: "smooth" });
             return;
         }
         if (!hamurKalınlıgı) {
             setError("Lütfen hamur kalınlığını seçiniz!");
+            hamurKalınlıgıRef.current.scrollIntoView({ behavior: "smooth" });
             return;
         }
         if (ekMalzemeler.length < 4) {
@@ -138,7 +143,7 @@ const OrderForm = (props) => {
             <form onSubmit={handleSubmit}>
                 <div className='boyut-hamur' >
 
-                    <div className='boyut-secim'>
+                    <div className='boyut-secim' ref={pizzaBoyutuRef} >
                         <h2>Boyut Seç <span style={{ color: "red" }}>*</span></h2>
                         <label className='small'>
                             <input
@@ -166,11 +171,14 @@ const OrderForm = (props) => {
                             />
                             <span>L</span>
                         </label>
+                        {error === "Lütfen pizza boyutunu seçiniz!" && (
+                            <p style={{ color: "red" }}>{error}</p>
+                        )}
                     </div>
 
 
                     {/* 📌 MAIN - HAMUR KALINLIĞI SEÇME */}
-                    <div className='hamur-secim'>
+                    <div className='hamur-secim' ref={hamurKalınlıgıRef}>
                         <h2>Hamur Seç<span style={{ color: "red" }}>*</span></h2>
                         <select
                             value={hamurKalınlıgı}
@@ -181,10 +189,12 @@ const OrderForm = (props) => {
                             <option value="Orta">Orta</option>
                             <option value="Kalın">Kalın</option>
                         </select>
-
+                        {error === "Lütfen hamur kalınlığını seçiniz!" && (
+                            <p style={{ color: "red" }}>{error}</p>
+                        )}
                     </div>
                 </div>
-                {error && <p style={{ color: "red" }}>{error}</p>}
+
 
 
                 {/* 📌 MAIN - EK MALZEMELERİ SEÇME */}
