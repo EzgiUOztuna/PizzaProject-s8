@@ -11,8 +11,7 @@ const initialForm = {
   price: 85.50,
   boyut: "",
   hamur: "",
-  ekMalzemeler: [],
-  terms: false
+  ekMalzemeler: []
 };
 
 export default function App() {

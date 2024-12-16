@@ -243,7 +243,7 @@ const OrderForm = ({ setFormData, formData, menuData }) => {
                 </div>
 
                 {/* 📌 FOOTER - SİPARİŞ VER BUTONU */}
-                <button className="siparis-ver" onClick={handleSubmit}>
+                <button className="siparis-ver" onClick={handleSubmit} >
                     SİPARİŞ VER
                 </button>
             </form >

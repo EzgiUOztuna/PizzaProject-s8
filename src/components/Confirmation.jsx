@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import "./Confirmation.css";
 import "../components/OrderForm.jsx";
 import Footer from './Footer.jsx';
+import menuData from '../assets/DummyData.js';
 
 const Confirmation = (props) => {
     const { formData } = props;
@@ -18,7 +19,7 @@ const Confirmation = (props) => {
 
                 <hr className='conf-section-divider' />
 
-                <h4>Position Absolute Acı Pizza</h4>
+                <h4>{menuData.menuTitle.find(item => item.id === 1).name}</h4>
 
                 <div className='conf-pizza-boyutu'>
                     <h3>Boyut:</h3>
