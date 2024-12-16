@@ -1,4 +1,4 @@
-{
+const menuData = {
     "menuTitle": [
         {
             "id": 1,
@@ -25,5 +25,10 @@
             "name": "useEffect Tavuklu Burger",
             "price": 60.00
         }
-    ]
-}
+    ],
+
+    "ekMalzemelerListesi": ["Pepperoni", "Tavuk Izgara", "Mısır", "Sarımsak", "Ananas", "Sosis", "Soğan", "Sucuk", "Biber", "Kabak", "Kanada Jambonu", "Domates", "Jalepeno"],
+
+};
+
+export default menuData;

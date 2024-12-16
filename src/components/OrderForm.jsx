@@ -5,42 +5,34 @@ import axios from 'axios';
 import { useHistory } from 'react-router-dom';
 import Footer from './Footer.jsx';
 import MenuDetails from './OrderFormMenuDetails.jsx';
+import menuData from "../assets/DummyData.js";
 
-const initialPrice = 85.50;
-
-const OrderForm = (props) => {
-    const { setFormData } = props;
+const OrderForm = ({ setFormData, formData, menuData }) => {
 
     const pizzaBoyutuRef = useRef(null); //scroll özelliği için.
     const hamurKalınlıgıRef = useRef(null);
 
-    const [pizzaBoyutu, setPizzaBoyutu] = useState("");
-    const [hamurKalınlıgı, setHamurKalınlıgı] = useState(""); // Hamur seçimi yapılacak.
-    const [error, setError] = useState(""); //Hata mesajını tutucak.
-    const [ekMalzemeler, setEkMalzemeler] = useState([]);
-    const [toplamFiyat, setToplamFiyat] = useState(initialPrice);
-    const [malzemeHatasi, setMalzemeHatasi] = useState("");
     const [siparisAdeti, setSiparisAdeti] = useState(1);
-
-    const ekMalzemelerListesi = ["Pepperoni", "Tavuk Izgara", "Mısır", "Sarımsak", "Ananas", "Sosis", "Soğan", "Sucuk", "Biber", "Kabak", "Kanada Jambonu", "Domates", "Jalepeno"];
+    const [error, setError] = useState(""); //Hata mesajını tutucak.
+    const [malzemeHatasi, setMalzemeHatasi] = useState("");
 
     const history = useHistory();
 
     /* 📌 HANDLE SUBMIT */
-    const handleSubmit = async (event) => {
+    const handleSubmit = (event) => {
         event.preventDefault();
 
-        if (!pizzaBoyutu) {
+        if (!formData.boyut) {
             setError("Lütfen pizza boyutunu seçiniz!");
             pizzaBoyutuRef.current.scrollIntoView({ behavior: "smooth" });
             return;
         }
-        if (!hamurKalınlıgı) {
+        if (!formData.hamur) {
             setError("Lütfen hamur kalınlığını seçiniz!");
             hamurKalınlıgıRef.current.scrollIntoView({ behavior: "smooth" });
             return;
         }
-        if (ekMalzemeler.length < 4) {
+        if (formData.ekMalzemeler.length < 4) {
             setMalzemeHatasi("En az 4 malzeme seçmelisiniz.");
             return;
         }
@@ -49,8 +41,14 @@ const OrderForm = (props) => {
         setMalzemeHatasi("");
 
         const siparisDetaylari = {
-            pizzaBoyutu, hamurKalınlıgı, ekMalzemeler, siparisAdeti, toplamFiyat: (toplamFiyat * siparisAdeti).toFixed(2),
+            boyut: formData.boyut,
+            hamur: formData.hamur,
+            ekMalzemeler: formData.ekMalzemeler,
+            siparisAdeti,
+            price: (formData.price * siparisAdeti).toFixed(2),
         };
+
+        console.log("Gönderilecek sipariş detayları:", siparisDetaylari);
 
         /* 📌 API'ye POST isteği gönder */
         axios.post("https://reqres.in/api/pizza", siparisDetaylari)
@@ -65,58 +63,39 @@ const OrderForm = (props) => {
     };
 
 
-    /* 📌 HANDLE DECREASE - (-) BUTONU İÇİN */
-    const handleDecrease = (e) => {
-        if (siparisAdeti > 1) {
-            setSiparisAdeti(siparisAdeti - 1);
-        }
-    };
-
-    /* 📌 HANDLE INCREASE - (+) BUTONU İÇİN */
-    const handleIncrease = () => {
-        setSiparisAdeti(siparisAdeti + 1);
-    }
-
-    /* 📌 HANDLE CHANGE'LER */
-    const handlePizzaBoyutChange = (yeniBoyut) => {
-        if (yeniBoyut) {
-            setError(""); // Hata mesajını sıfırlayın
-        }
-        setPizzaBoyutu(yeniBoyut.target.value);
-    }
-
-    const handleHamurKalınlıgıChange = (yeniHamurKalınlıgı) => {
-        if (yeniHamurKalınlıgı) {
-            setError(""); // Hata mesajını sıfırlayın
-        }
-        setHamurKalınlıgı(yeniHamurKalınlıgı.target.value);
-    }
-
-    const handleMalzemeChange = (e) => {
-        const { value, checked } = e.target;
-        let updatedMalzemeler = [...ekMalzemeler];
+    const handleMalzemeChange = (event) => {
+        let { value, checked } = event.target;
+        let updatedEkMalzemeler = [...formData.ekMalzemeler];
 
         if (checked) {
-            if (updatedMalzemeler.length < 10) {
-                updatedMalzemeler.push(value); // Malzeme ekle
+            if (updatedEkMalzemeler.length < 10) {
+                updatedEkMalzemeler.push(value); // Malzeme ekle
             } else {
                 alert("En fazla 10 malzeme seçebilirsiniz.");
                 return;
             }
         } else {
-            updatedMalzemeler = updatedMalzemeler.filter((item) => item !== value); // Seçtiğim malzemeyi kaldırmak istersem.
+            updatedEkMalzemeler = updatedEkMalzemeler.filter((item) => item !== value); // Seçtiğim malzemeyi kaldırmak istersem.
         }
 
-        if (updatedMalzemeler.length < 4) { // Minimum malzeme kontrolü
+        if (updatedEkMalzemeler.length < 4) { // Minimum malzeme kontrolü
             setMalzemeHatasi("En az 4 malzeme seçmelisiniz.");
         } else {
             setMalzemeHatasi(""); // Hata yoksa mesajı sıfırla
         }
-        setEkMalzemeler(updatedMalzemeler);
 
-        setToplamFiyat(initialPrice + updatedMalzemeler.length * 5);
+        // Her ek malzeme seçildiğinde 5 TL ekle
+        let newPrice = menuData.menuTitle[0].price + updatedEkMalzemeler.length * 5;
 
-    }
+        // Formu güncelle
+        setFormData({
+            ...formData,
+            ekMalzemeler: updatedEkMalzemeler,
+            price: newPrice,
+        });
+    };
+
+
 
     return (
         <>
@@ -149,16 +128,16 @@ const OrderForm = (props) => {
                             <input
                                 type="radio"
                                 value="S"
-                                checked={pizzaBoyutu === "S"}
-                                onChange={handlePizzaBoyutChange}
+                                checked={formData.boyut === "S"}
+                                onChange={(yeniBoyut) => setFormData({ ...formData, boyut: yeniBoyut.target.value }) || setError("")}
                             /> <span>S</span>
                         </label>
                         <label>
                             <input
                                 type="radio"
                                 value="M"
-                                checked={pizzaBoyutu === "M"}
-                                onChange={handlePizzaBoyutChange}
+                                checked={formData.boyut === "M"}
+                                onChange={(yeniBoyut) => setFormData({ ...formData, boyut: yeniBoyut.target.value }) || setError("")}
                             />
                             <span>M</span>
                         </label>
@@ -166,8 +145,8 @@ const OrderForm = (props) => {
                             <input
                                 type="radio"
                                 value="L"
-                                checked={pizzaBoyutu === "L"}
-                                onChange={handlePizzaBoyutChange}
+                                checked={formData.boyut === "L"}
+                                onChange={(yeniBoyut) => setFormData({ ...formData, boyut: yeniBoyut.target.value }) || setError("")}
                             />
                             <span>L</span>
                         </label>
@@ -181,8 +160,8 @@ const OrderForm = (props) => {
                     <div className='hamur-secim' ref={hamurKalınlıgıRef}>
                         <h2>Hamur Seç<span style={{ color: "red" }}>*</span></h2>
                         <select
-                            value={hamurKalınlıgı}
-                            onChange={handleHamurKalınlıgıChange}
+                            value={formData.hamur}
+                            onChange={(yeniHamur) => setFormData({ ...formData, hamur: yeniHamur.target.value }) || setError("")}
                         >
                             <option value="">-Hamur Kalınlığı Seç-</option>
                             <option value="İnce">İnce</option>
@@ -201,12 +180,12 @@ const OrderForm = (props) => {
                 <div className='ek-malzemeler'>
                     <h2>Ek Malzemeler</h2>
                     <p>En fazla 10 malzeme seçebilirsiniz. 5₺</p>
-                    {ekMalzemelerListesi.map((malzeme) => (
+                    {menuData.ekMalzemelerListesi.map((malzeme) => (
                         <label key={malzeme}>
                             <input
                                 type="checkbox"
                                 value={malzeme}
-                                checked={ekMalzemeler.includes(malzeme)}
+                                checked={formData.ekMalzemeler.includes(malzeme)}
                                 onChange={handleMalzemeChange}
                             />
                             {malzeme}
@@ -216,13 +195,14 @@ const OrderForm = (props) => {
                 </div>
 
                 {/* 📌 MAIN - SİPARİŞ NOTU */}
-                <div className='siparis-notu'>
+                <div className='siparis-notu' >
                     <h2>Sipariş Notu</h2>
                     <textarea
                         placeholder='Siparişine eklemek istediğin bir not var mı?'
                         rows="3"
                         cols="50"></textarea>
                 </div>
+
 
                 <hr className='section-divider' />
 
@@ -232,14 +212,14 @@ const OrderForm = (props) => {
                         <button
                             type="button"
                             className="decrement"
-                            onClick={handleDecrease}>
+                            onClick={() => siparisAdeti > 1 && setSiparisAdeti(siparisAdeti - 1)}>
                             -
                         </button>
                         <span className="count">{siparisAdeti}</span>
                         <button
                             type="button"
                             className="increment"
-                            onClick={handleIncrease}>
+                            onClick={() => { setSiparisAdeti(siparisAdeti + 1) }}>
                             +
                         </button>
                     </div>
@@ -250,12 +230,14 @@ const OrderForm = (props) => {
                         <h2>Sipariş Toplamı</h2>
                         <div className='secimler'>
                             <h3>Seçimler</h3>
-                            <p>{ekMalzemeler.length * 5}₺</p>
+                            <p>{formData.ekMalzemeler.length * 5}₺</p>
+
                         </div>
 
                         <div className='toplam'>
                             <h3>Toplam</h3>
-                            <p>{(toplamFiyat * siparisAdeti).toFixed(2)}₺</p>
+                            <p>{(formData.price * siparisAdeti).toFixed(2)}₺</p>
+
                         </div>
                     </div>
                 </div>

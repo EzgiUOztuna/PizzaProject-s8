@@ -1,16 +1,28 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./OrderFormMenuDetails.css"
+import menuData from '../assets/DummyData.js';
 
 const MenuDetails = () => {
-    const initialPrice = 85.50;
+
+    const [menuName, setMenuName] = useState("");
+    const [menuPrice, setMenuPrice] = useState();
+
+    useEffect(() => {
+        const item = menuData.menuTitle.find(item => item.id === 1);
+        if (item) {
+            setMenuName(item.name);
+            setMenuPrice(item.price);
+        }
+    }, []);
+
 
     return (
         <div>
             {/* 📌 MAIN - BAŞLIK / PRICE / RATING'LER */}
-            <p p className='titleOne'> Position Absolute Acı Pizza </p>
+            <p className='titleOne'> {menuName} </p>
 
             <div className="price-rating-container">
-                <span className="price">{initialPrice}₺</span>
+                <span className="price">{menuPrice}₺</span>
                 <span className="rating">4.9
                     <span className="rating-count">(200)</span>
                 </span>

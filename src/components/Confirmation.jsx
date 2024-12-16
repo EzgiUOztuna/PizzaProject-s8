@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import "./Confirmation.css";
 import "../components/OrderForm.jsx";
 import Footer from './Footer.jsx';
@@ -6,6 +6,7 @@ import Footer from './Footer.jsx';
 const Confirmation = (props) => {
     const { formData } = props;
 
+    const [siparisAdeti, setSiparisAdeti] = useState(1);
     document.body.classList.add('confirmation-bg');
 
     return (
@@ -21,12 +22,12 @@ const Confirmation = (props) => {
 
                 <div className='conf-pizza-boyutu'>
                     <h3>Boyut:</h3>
-                    <p>{formData.pizzaBoyutu}</p>
+                    <p>{formData.boyut}</p>
                 </div>
 
                 <div className='conf-hamur-kalinligi'>
                     <h3>Hamur:</h3>
-                    <p>{formData.hamurKalınlıgı}</p>
+                    <p>{formData.hamur}</p>
                 </div>
 
                 <div className='conf-ek-malzemeler'>
@@ -42,7 +43,7 @@ const Confirmation = (props) => {
                     </div>
                     <div className='conf-toplam'>
                         <h3>Toplam</h3>
-                        <p>{(formData.toplamFiyat * formData.siparisAdeti).toFixed(2)}₺</p>
+                        <p>{(formData.price * siparisAdeti).toFixed(2)}₺</p>
                     </div>
                 </div>
             </div>
