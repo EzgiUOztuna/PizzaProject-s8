@@ -9,7 +9,7 @@ import HomeSeceneklerEng from './HomeSeceneklerEng';
 
 export default function Home() {
     return (
-        <div className="image">
+        <div className="container">
             <div className='new-image'>
                 <p className='firsat'>fırsatı kaçırma</p>
                 <p className='paragraf-home'>KOD ACIKTIRIR PİZZA,DOYURUR</p>

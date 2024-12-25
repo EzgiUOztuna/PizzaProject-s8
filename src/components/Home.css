@@ -1,10 +1,16 @@
-.image {
-    position: relative;
+html {
+    font-size: 15px;
+}
+
+.container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+
 }
 
 .home-banner {
     width: 100%;
-    height: auto;
 }
 
 /* Logo */
@@ -94,40 +100,34 @@
 
 
 
+@media(max-width: 576px) {
+    .container {
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+        /*position: relative;*/
 
-@media screen and (max-width: 768px) {
+    }
+
+    .home-banner {
+        width: auto;
+    }
+
     .home-logo {
-        width: 15rem;
-        /* Adjust logo size */
-        top: 2rem;
-        /* Adjust logo position */
-        margin-bottom: 1.5rem;
-        /* Adjust margin */
+        top: 5rem;
+        width: 22rem;
+        margin-bottom: 3rem;
     }
 
     .paragraf-home {
-        font-size: 3rem;
-        /* Smaller font size */
-        width: 90%;
-        /* Adjust width */
-        top: 4rem;
-        /* Adjust position */
-        font-size: 4rem;
+        width: 25rem;
+        height: auto;
+        text-align: center;
     }
 
     .button-home {
-        width: 10rem;
-        /* Adjust button width */
-        height: 3rem;
-        /* Adjust button height */
-        top: 20rem;
-        /* Adjust button position */
-    }
-
-    .firsat {
-        top: 5rem;
-        /* Adjust position */
+        top: 35rem;
         font-size: 1.5rem;
-        /* Adjust font size */
+        padding: 0 2rem;
     }
 }
