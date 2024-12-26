@@ -101,11 +101,11 @@ const OrderForm = ({ setFormData, formData, menuData }) => {
         <>
             {/* 📌 RED-HEADER */}
             <div className='header-container'>
-                <img src="/Assets/Iteration-1-assets/logo.svg" alt="Logo" className="logo" />
+                <img src="/Iteration-1-assets/logo.svg" alt="Logo" className="logo" />
             </div >
 
             <div className='new-container' >
-                <img src="Assets/Iteration-2-aseets/pictures/form-banner.png" className="new-banner" />
+                <img src="/Iteration-2-aseets/pictures/form-banner.png" className="new-banner" />
 
                 <div className='links-container'>
                     <Link to="/">

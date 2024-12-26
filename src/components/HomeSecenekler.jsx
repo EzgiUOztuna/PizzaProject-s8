@@ -2,12 +2,12 @@ import React from 'react';
 import "./HomeSecenekler.css";
 
 const secenekler = [
-    { icon: 'Assets/Iteration-2-aseets/icons/1.svg', label: 'YENİ! Kore' },
-    { icon: 'Assets/Iteration-2-aseets/icons/2.svg', label: 'Pizza' },
-    { icon: 'Assets/Iteration-2-aseets/icons/3.svg', label: 'Burger' },
-    { icon: 'Assets/Iteration-2-aseets/icons/4.svg', label: 'Kızartmalar' },
-    { icon: 'Assets/Iteration-2-aseets/icons/5.svg', label: 'Fast food' },
-    { icon: 'Assets/Iteration-2-aseets/icons/6.svg', label: 'Gazlı İçecek' },
+    { icon: '/Iteration-2-aseets/icons/1.svg', label: 'YENİ! Kore' },
+    { icon: '/Iteration-2-aseets/icons/2.svg', label: 'Pizza' },
+    { icon: '/Iteration-2-aseets/icons/3.svg', label: 'Burger' },
+    { icon: '/Iteration-2-aseets/icons/4.svg', label: 'Kızartmalar' },
+    { icon: '/Iteration-2-aseets/icons/5.svg', label: 'Fast food' },
+    { icon: '/Iteration-2-aseets/icons/6.svg', label: 'Gazlı İçecek' },
 ];
 
 const HomeSecenekler = () => {
