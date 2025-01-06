@@ -12,7 +12,7 @@ export default function Home() {
         <div className="container">
             <div className='new-image'>
                 <p className='firsat'>fırsatı kaçırma</p>
-                <p className='paragraf-home'>KOD ACIKTIRIR PİZZA,DOYURUR</p>
+                <p className='paragraf-home'>KOD ACIKTIRIR PİZZA, DOYURUR</p>
                 <img className="home-logo" src="/Iteration-1-assets/home-logo.svg" />
                 <Link to="/order">
                     <button className='button-home'>ACIKTIM</button>

@@ -104,8 +104,7 @@ html {
     .container {
         width: 100%;
         height: auto;
-        overflow: hidden;
-        /*position: relative;*/
+        /*overflow: hidden;*/
 
     }
 
@@ -123,10 +122,11 @@ html {
         width: 25rem;
         height: auto;
         text-align: center;
+
     }
 
     .button-home {
-        top: 35rem;
+        top: 40rem;
         font-size: 1.5rem;
         padding: 0 2rem;
     }
