@@ -10,7 +10,8 @@
     position: relative;
 }
 
-.first-col img.first-col-img {
+.first-col,
+.first-col-img {
     width: 33.18rem;
     height: 28.06rem;
 }
@@ -35,7 +36,7 @@
     left: 2rem;
     /* h1 ile hizalı olur */
     font-size: 1.25rem;
-    font-weight: 600;
+    font-weight: 400;
     width: 18rem;
     color: white;
 }
@@ -82,8 +83,6 @@
     color: white;
     top: .7rem;
     left: 2rem;
-
-
 }
 
 .sec-col-one button {
@@ -98,7 +97,6 @@
     background-color: white;
     cursor: pointer;
 }
-
 
 
 .sec-col-two {
@@ -135,4 +133,25 @@
     color: #ce2829;
     background-color: white;
     cursor: pointer;
+}
+
+
+@media(max-width: 576px) {
+    .cards {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        padding: 3rem 1rem;
+        align-items: baseline;
+        justify-content: center;
+    }
+
+    .first-col-img {
+        width: 23rem;
+        height: 20rem;
+        border-radius: .5rem;
+    }
+
+
+
 }

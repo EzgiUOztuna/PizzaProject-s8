@@ -12,26 +12,24 @@
 
 }
 
-.kore {
-    gap: 1rem;
-}
-
-.pizza {
-    gap: 1rem;
-}
-
-.burger {
-    gap: 1rem;
-}
-
-.kızartma {
-    gap: 1rem;
-}
-
-.fastfood {
-    gap: 1rem;
-}
-
+.kore,
+.pizza,
+.burger,
+.kızartma,
+.fastfood,
 .icecek {
     gap: 1rem;
+}
+
+
+@media(max-width: 576px) {
+    .secenekler {
+        display: grid;
+        grid-template-rows: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+        margin: 1.5rem 0;
+        padding: 0 2.5rem;
+    }
+
 }
