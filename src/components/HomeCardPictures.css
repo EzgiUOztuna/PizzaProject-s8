@@ -201,3 +201,12 @@
     color: #5F5F5F;
     padding-left: 7rem;
 }
+
+
+@media(max-width: 576px) {
+    .cards-and-pictures {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+}

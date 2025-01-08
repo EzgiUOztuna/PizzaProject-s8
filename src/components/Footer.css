@@ -11,7 +11,6 @@
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
-
 }
 
 .footer-first-col {
@@ -30,7 +29,6 @@
     margin-bottom: 2rem;
     text-align: left;
     color: white;
-
 }
 
 .location {
@@ -38,7 +36,6 @@
     align-items: center;
     gap: 1rem;
     color: white;
-
 }
 
 .location img {
@@ -62,8 +59,6 @@
     gap: 1rem;
     align-items: center;
     color: white;
-
-
 }
 
 .email img {
@@ -130,7 +125,6 @@
     width: 20.5rem;
     margin-top: 4.9rem;
     margin-right: 10rem;
-
 }
 
 .instagram-grid {
@@ -198,4 +192,82 @@
     width: 1rem;
     height: 1rem;
     margin-right: 2.5rem;
+}
+
+
+@media(max-width: 576px) {
+
+    .footer-first-col {
+        display: flex;
+        flex-direction: column;
+        width: 19.12rem;
+        margin-left: 0;
+        gap: 0;
+        padding-top: 1.5rem;
+    }
+
+    .footer h1 {
+        font-size: 3rem;
+        margin-bottom: 0;
+    }
+
+    .footer-second-col {
+        width: 19.12rem;
+        margin-top: 2rem;
+    }
+
+    .footer-second-col h1 {
+        font-size: 2.5rem;
+        text-align: left;
+    }
+
+    .footer-third-col {
+        width: 19.12rem;
+        margin-top: 3rem;
+        margin-right: 0;
+    }
+
+    .instagram-grid img {
+        width: 5.5rem;
+        height: 5.5rem;
+    }
+
+    .instagram-grid {
+        gap: 0;
+        padding-bottom: 2rem;
+    }
+
+    .footer-third-col h1 {
+        font-size: 2.5rem;
+        text-align: left;
+        margin: 0;
+        padding-bottom: 1.5rem;
+    }
+
+    .footer-section-divider {
+        flex-basis: 75%;
+        /* Tüm satırı kaplar */
+        margin: 2rem 0 1rem 0;
+        color: rgba(255, 255, 255, 0.139);
+    }
+
+    .footer-last {
+        display: flex;
+        justify-content: space-around;
+        gap: 0;
+        padding: 1rem 0;
+        width: 100%;
+    }
+
+    .footer-last p {
+        font-size: .9rem;
+        text-align: left;
+        width: 11.5rem;
+        margin-left: 0;
+    }
+
+    .footer-last img.twitter {
+        margin-right: 0;
+    }
+
 }
