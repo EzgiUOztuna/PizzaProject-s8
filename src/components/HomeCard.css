@@ -157,7 +157,7 @@
     }
 
     .first-col-img {
-        width: 23rem;
+        width: 27rem;
         height: 20rem;
         border-radius: .5rem;
     }
@@ -180,7 +180,7 @@
     .sec-col-one img,
     .sec-col-two img {
         height: 10rem;
-        width: 23rem;
+        width: 27rem;
         border-radius: .5rem;
         left: 0;
     }
