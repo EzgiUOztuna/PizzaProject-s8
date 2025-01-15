@@ -193,3 +193,33 @@
     }
 
 }
+
+@media(max-width: 991px) {
+    .secenekler-eng {
+        gap: 1rem;
+        margin-bottom: 4rem;
+    }
+
+    .ramen img,
+    .pizza-eng img,
+    .burger-eng img,
+    .frenchfries img,
+    .fastfood-eng img,
+    .softdrinks img {
+        width: 2.5rem;
+        height: 2.5rem;
+        padding: 0;
+        margin: 0;
+    }
+
+    .ramen,
+    .pizza-eng,
+    .burger-eng,
+    .frenchfries,
+    .fastfood-eng,
+    .softdrinks {
+        gap: .2rem;
+        width: 8.5rem;
+        height: 3.5rem;
+    }
+}

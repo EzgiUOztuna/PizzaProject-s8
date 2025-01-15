@@ -199,5 +199,59 @@
         width: 7rem;
         height: 1.8rem;
     }
+}
+
+@media(max-width: 991px) {
+    .cards {
+        gap: 1rem;
+        padding-bottom: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .first-col {
+        width: 100%;
+        height: auto;
+    }
+
+    .first-col-img {
+        width: 24rem;
+        height: auto;
+        border-radius: .5rem;
+    }
+
+    .sec-col {
+        width: 100%;
+        height: auto;
+        gap: 1rem;
+    }
+
+    .sec-col-one,
+    .sec-col-two {
+        height: auto;
+    }
+
+    .sec-col-one img,
+    .sec-col-two img {
+        height: auto;
+        width: 23.5rem;
+        border-radius: .5rem;
+    }
+
+    .sec-col-one h1,
+    .sec-col-two h1 {
+        font-size: 1.5rem;
+        top: .4rem;
+        left: 1.5rem;
+    }
+
+    .sec-col-one button,
+    .sec-col-two button {
+        top: 6rem;
+        left: 1.5rem;
+        width: 7rem;
+        height: 1.8rem;
+    }
 
 }
