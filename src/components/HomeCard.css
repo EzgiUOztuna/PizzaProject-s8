@@ -201,17 +201,15 @@
     }
 }
 
-@media(max-width: 991px) {
+@media(min-width: 576px) and (max-width: 991px) {
     .cards {
-        gap: 1rem;
+        width: auto;
+        gap: 2rem;
         padding-bottom: 1rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
     }
 
     .first-col {
-        width: 100%;
+        width: auto;
         height: auto;
     }
 
@@ -222,7 +220,7 @@
     }
 
     .sec-col {
-        width: 100%;
+        width: 23.5rem;
         height: auto;
         gap: 1rem;
     }

@@ -148,7 +148,7 @@ html {
 }
 
 
-@media(max-width: 991px) {
+@media(min-width: 576px) and (max-width: 991px) {
     .container {
         max-width: 62rem;
         height: auto;

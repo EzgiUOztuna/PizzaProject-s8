@@ -33,7 +33,7 @@
     }
 }
 
-@media(max-width: 991px) {
+@media(min-width: 576px) and (max-width: 991px) {
     .secenekler {
         gap: 1.7rem;
         margin-bottom: 1rem;

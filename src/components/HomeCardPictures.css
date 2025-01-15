@@ -212,7 +212,7 @@
 }
 
 
-@media(max-width: 991px) {
+@media(min-width: 576px) and (max-width: 991px) {
     .cards-and-pictures {
         gap: .8rem;
     }
@@ -220,58 +220,28 @@
     .terminal-pizza,
     .absolute-pizza,
     .tavuk-burger {
-        width: 20rem;
-        height: 26.18rem;
+        width: 17rem;
+        height: 24rem;
     }
 
 
-    .terminal-pizza img.ter-piz {
-        width: 16.91rem;
-        height: 16.56rem;
+    .terminal-pizza img.ter-piz,
+    .tavuk-burger img.tvk-brgr,
+    .absolute-pizza img.abs-piz {
+        width: 15rem;
+        height: 15rem;
     }
 
-    .terminal-pizza h2 {
-        width: 16.91rem;
-        font-family: "Barlow", sans-serif;
-        font-size: 1.37rem;
-        font-weight: 600;
-        color: #292929;
+    .terminal-pizza h2,
+    .absolute-pizza h2,
+    .tavuk-burger h2 {
+        width: 15rem;
+        font-size: 1.2rem;
     }
 
-    .subtitles-ter-piz {
-        width: 16.91rem;
-        height: 1.81rem;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .subtitles-ter-piz span {
-        font-family: "Barlow", sans-serif;
-        font-size: 1rem;
-        font-weight: 400;
-        color: #1b1b1b;
-    }
-
-    .subtitles-ter-piz p {
-        font-family: "Barlow", sans-serif;
-        font-size: 1rem;
-        font-weight: 600;
-        color: #292929;
-    }
-
-    .rating-pizza {
-        display: flex;
-        justify-content: space-between;
-        gap: 1rem;
-        font-size: 1rem;
-        width: 7.56rem;
-        color: #5F5F5F;
-    }
-
-    .rating-count-pizza {
-        font-size: 1rem;
-        color: #5F5F5F;
-        padding-left: 7rem;
+    .subtitles-ter-piz,
+    .subtitles-abs-piz,
+    .subtitles-tvk-brgr {
+        width: 15rem;
     }
 }

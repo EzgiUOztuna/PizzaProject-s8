@@ -271,3 +271,48 @@
     }
 
 }
+
+
+@media(min-width: 576px) and (max-width: 991px) {
+    .footer-first-col {
+        width: 19rem;
+        margin-left: 0;
+        gap: 1rem;
+    }
+
+    .location {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        color: white;
+    }
+
+    .location p,
+    .email p,
+    .phone p {
+        margin: 0.2rem;
+    }
+
+    .footer-second-col {
+        width: 14rem;
+        margin-top: .4rem;
+    }
+
+    .footer-third-col {
+        width: 14rem;
+        margin-top: 3.5rem;
+        margin-right: 0;
+    }
+
+    .instagram-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: .1rem;
+    }
+
+    .instagram-grid img {
+        width: 6rem;
+        height: 6rem;
+    }
+
+}
